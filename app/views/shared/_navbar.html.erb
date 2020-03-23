@@ -2,6 +2,9 @@
   <% color_text = params[:controller] == 'pages' && params[:action] == 'home' ? 'text-white' : 'text-blue'  %>
   <% color_user = params[:controller] == 'pages' && params[:action] == 'home' ? 'user-white' : 'user-blue'  %>
 
+  <% color_text = params[:controller] == 'services' && params[:action] == 'show' ? 'text-white' : 'text-blue'  %>
+  <% color_user = params[:controller] == 'services' && params[:action] == 'show' ? 'user-white' : 'user-blue'  %>
+
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to root_path, class: "navbar-brand #{color_text}" do %>
       <h1 class="logo">BICI<strong>COURIERS</strong></h1>

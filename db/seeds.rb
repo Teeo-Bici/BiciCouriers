@@ -41,6 +41,10 @@ Service.create(
     title: "Gestion de boîte postale",
     content: "La légendaire tournée du facteur est trop tardive ?
 Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose.
+Plus besoin de courir à la poste avant qu’elle ferme !",
+    images: "services/relai_poste.png",
+    details: "La légendaire tournée du facteur est trop tardive ?
+Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose.
 Plus besoin de courir à la poste avant qu’elle ferme !"
   }
 )

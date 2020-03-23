@@ -1,0 +1,12 @@
+<div class="show-service-container">
+
+  <div class="show-service-img">
+   <%= image_tag @service.images %>
+  </div>
+  <div class="show-service-details">
+    <%= link_to "< RETOUR AU SERVICE", services_index_path %>
+    <h1><%= @service.title %></h1>
+    <p> <%= @service.details %></p>
+    <%= link_to "DEMANDER UN DEVIS", services_index_path, class: "d-button" %>
+  </div>
+</div>
