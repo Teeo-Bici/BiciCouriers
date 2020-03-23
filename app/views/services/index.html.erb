@@ -1,0 +1,42 @@
+<!-- SERVICES -->
+
+
+<div class="long-container">
+  <div class="oeuf-1">
+    <%= image_tag 'oeuf_1.svg' %>
+  </div>
+  <div class="services-container">
+    <%= render 'shared/social' %>
+
+    <div class="services-info-container">
+      <div class="services-info-title">
+      <h1>Nos Services</h1>
+      </div>
+      <div class="services-info-text">
+        <p>En tant que coursiers professionnels à Nantes, nous mettons tout en oeuvre pour répondre à vos besoins de façon professionnelle, rapide et efficace. Nous sommes des experts en livraison urgente et express. Nos vélos cargos nous permettent de transporter même les marchandises les plus encombrantes.</p>
+      </div>
+    </div>
+
+
+    <div class="service-board">
+        <% @services.each do |service| %>
+        <div class="ghost-card_service">
+          <div class="card-service">
+            <div class="service-title">
+              <h2> <%= service.title %> </h2>
+            </div>
+            <div class="service-content">
+              <p> <%= service.content %> </p>
+            </div>
+          </div>
+          <div class="service-button">
+            <%= link_to "En savoir plus", service_path(service), class: 's-button' %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="oeuf-2">
+    <%= image_tag 'oeuf_2.png' %>
+  </div>
+</div>

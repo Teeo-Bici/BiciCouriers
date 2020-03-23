@@ -1,0 +1,31 @@
+.transition-right {
+  transition: 0.2s;
+  opacity: 1;
+  transform: translateX(0%);
+  transform-origin: left;
+}
+
+html.is-animating .transition-right {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+html.is-leaving .transition-right {
+  opacity: 0;
+}
+
+.transition-left {
+  transition: 0.2s;
+  opacity: 1;
+  transform: translateX(0);
+  transform-origin: left;
+}
+
+html.is-animating .transition-left {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-left {
+  opacity: 0;
+}
