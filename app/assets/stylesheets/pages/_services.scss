@@ -1,8 +1,8 @@
-.services-container {
-  // background-color: white;
+.long-container {
   height: 100vh;
-  width: 100vw;
+  width: 3000px;
   overflow: scroll;
+  position: relative;
 }
 
 .services-info-container {
@@ -31,13 +31,12 @@
 
 .oeuf-1 {
   height: 330px;
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: 600px;
 }
 
 .oeuf-2 {
-  height: 330px;
   position: absolute;
   bottom: 0px;
   right: 0px;

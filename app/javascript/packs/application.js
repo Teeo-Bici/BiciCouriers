@@ -1,6 +1,6 @@
 import "bootstrap";
-import Swup from 'swup';
+//import Swup from 'swup';
 
 
 
-const swup = new Swup();
+//const swup = new Swup();
