@@ -4,7 +4,11 @@
    <%= image_tag @service.images %>
   </div>
   <div class="show-service-details">
-    <%= link_to "< RETOUR AU SERVICE", services_index_path %>
+    <%= link_to services_index_path do %>
+       <i class="fas fa-angle-left"></i><%= "  RETOUR AU SERVICE"%>
+    <% end %>
+
+
     <h1><%= @service.title %></h1>
     <p> <%= @service.details %></p>
     <%= link_to "DEMANDER UN DEVIS", services_index_path, class: "d-button" %>
