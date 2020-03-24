@@ -48,6 +48,22 @@
   right: 100px;
 }
 
+.long-line {
+  position: absolute;
+  bottom: 100px;
+  left: 150px;
+  width:auto;
+}
+
+.plein {
+  overflow: hidden;
+  width:200px;
+}
+
+.dashed {
+  overflow: hidden;
+  width:2800px;
+}
 
 .service-board {
   display: flex;

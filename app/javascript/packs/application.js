@@ -1,7 +1,6 @@
 import "bootstrap";
 //import Swup from 'swup';
 
-import  { eggsMovement } from '../shared/eggs.js';
+import  { movement } from '../shared/services.js';
 
-eggsMovement();
-//const swup = new Swup();
+movement();
