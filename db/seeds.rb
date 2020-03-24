@@ -41,6 +41,10 @@ Service.create(
     title: "Gestion de boîte postale",
     content: "La légendaire tournée du facteur est trop tardive ?
 Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose.
+Plus besoin de courir à la poste avant qu’elle ferme !",
+    images: "services/relai_poste.png",
+    details: "La légendaire tournée du facteur est trop tardive ?
+Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose.
 Plus besoin de courir à la poste avant qu’elle ferme !"
   }
 )
@@ -53,6 +57,33 @@ Bici Couriers s’engage à réaliser tous les défis (dans la limite du réalis
 Nous proposons également des abonnements et carnets de tickets pour les demandes récurrentes. "
   }
 )
+
+Avantage.create(
+  {
+    image_pour: "avantages/co2.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/logique.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/courbature.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/sympa.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/stress.svg",
+  }
+)
+
 
 
 

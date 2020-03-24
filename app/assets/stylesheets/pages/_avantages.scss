@@ -1,0 +1,104 @@
+.avantages-main-container {
+  // background-color: pink;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.a-oeuf-1 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.a-oeuf-2 {
+  position: absolute;
+    img {
+  z-index: 15;
+
+  }
+}
+
+.a-line {
+  position: absolute;
+  top: 50%;
+
+}
+
+.avantages-details {
+  margin: auto;
+  // background-color: red;
+  width: 30%;
+  margin-left: 150px;
+    h1 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 68px;
+      line-height: 72px;
+      color: $blue;
+      padding-bottom: 40px;
+    }
+    p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 25px;
+      color: $blue;
+    }
+}
+
+.avantages-cards {
+  // background-color: blue;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.back-card {
+  // background-image: asset-url("back-card.svg");
+  // background-position: center;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  position: relative;
+
+  width: 450px;
+  height: 700px;
+  z-index: 5;
+}
+
+.back-card:hover {
+  .back-card-one {
+  transform: rotate(10deg);
+  }
+  .back-card-two {
+  transform: rotate(-10deg);
+  }
+}
+
+.avantages-card {
+  position: absolute;
+  transition: 1s;
+
+  top: 25px;
+  left: 25px;
+  width: 400px;
+  height: 650px;
+  z-index: 5;
+  .card-images {
+    margin: 60px auto;
+  }
+}
+
+
+
+
+
+
+

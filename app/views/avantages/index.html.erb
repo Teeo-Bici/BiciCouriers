@@ -1,0 +1,32 @@
+<div class="avantages-main-container">
+  <div class="a-oeuf-1">
+    <%= image_tag 'a-oeuf-1.svg' %>
+  </div>
+
+  <div class="a-line">
+    <%= image_tag 'a-line.svg' %>
+  </div>
+  <div class="avantages-details">
+    <h1>Nos Avantages</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio adipisci totam, recusandae, eaque enim molestias perspiciatis unde ea eum temporibus delectus cum quos optio quisquam animi, rem natus porro? Sequi!</p>
+  </div>
+
+  <div class="avantages-cards">
+    <div class="a-oeuf-2">
+      <%= image_tag 'a-oeuf-2.svg' %>
+    </div>
+    <div class="back-card">
+      <div class="avantages-card back-card-one">
+        <div class="card-images"><%= image_tag "avantages/blue_1" %></div>
+      </div>
+      <div class="avantages-card back-card-two">
+        <div class="card-images"><%= image_tag "avantages/blue_2" %></div>
+      </div>
+      <% @avantages.each do |avantage| %>
+      <div class="avantages-card">
+        <div class="card-images"><%= image_tag avantage.image_pour %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
