@@ -58,6 +58,33 @@ Nous proposons également des abonnements et carnets de tickets pour les demande
   }
 )
 
+Avantage.create(
+  {
+    image_pour: "avantages/co2.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/logique.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/courbature.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/sympa.svg",
+  }
+)
+Avantage.create(
+  {
+    image_pour: "avantages/stress.svg",
+  }
+)
+
+
 
 
 
