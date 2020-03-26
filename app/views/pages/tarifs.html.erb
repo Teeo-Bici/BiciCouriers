@@ -1,0 +1,106 @@
+<div class="tarif-main-container">
+  <div class="oeuf-1">
+    <%= image_tag "tarifs/oeuf-1" %>
+  </div>
+  <div class="oeuf-2">
+    <%= image_tag "tarifs/oeuf-2" %>
+  </div>
+  <div class="oeuf-3">
+    <%= image_tag "tarifs/oeuf-3" %>
+  </div>
+  <div class="tarif-second-container">
+    <div class="tarif-title">
+      <h1>Les tarifs</h1>
+      <p>Des formules adaptées à vos besoins</p>
+    </div>
+
+    <div class="all-tarifs">
+      <div class="tarif-course">
+        <h2>Formule à la course</h2>
+        <p>Reservez et payez votre course en un clic. </p>
+        <%= image_tag "tarifs/ticket-1.svg" %>
+        <p class="price">5,83€ ht </p>
+        <p>le ticket</p>
+        <%= link_to "Passer commande", new_contact_path, class: "bici-button"  %>
+      </div>
+
+      <div class="tarifs-carnets">
+        <h2>Carnets de tickets</h2>
+        <p>Taille de carnet évolutif pour tous vos types de besoins.</p>
+        <div class="carnets">
+          <div class="carnet-units">
+            <p>10</p>
+            <%= image_tag "tarifs/ticket-2.svg" %>
+            <p class="price">5,00€ ht</p>
+            <p>le ticket</p>
+          </div>
+          <div class="carnet-units">
+            <p>20</p>
+            <%= image_tag "tarifs/ticket-2.svg" %>
+            <p class="price">4,80€ ht</p>
+            <p>le ticket</p>
+          </div>
+          <div class="carnet-units">
+            <p>50</p>
+            <%= image_tag "tarifs/ticket-2.svg" %>
+            <p class="price">4,40€ ht</p>
+            <p>le ticket</p>
+          </div>
+          <div class="carnet-units">
+            <p>100</p>
+            <%= image_tag "tarifs/ticket-2.svg" %>
+            <p class="price">4,20€ ht</p>
+            <p>le ticket</p>
+          </div>
+        </div>
+          <%= link_to "Acheter mon carnet", new_contact_path, class: "bici-button" %>
+      </div>
+
+      <div class="tarif-abonnement">
+        <h2>Abonnement</h2>
+        <p>Pour tout service récurrent n’hésitez pas à nous contacter, nous vous créerons un devis sur-mesure.</p>
+        <%= image_tag "tarifs/devis.svg" %> <br>
+        <%= link_to "Demander un devis", new_contact_path, class: "bici-button"  %>
+      </div>
+    </div>
+
+    <div class="tarif-title">
+      <p>Une tarification évolutive au plus proche de vous</p>
+    </div>
+
+    <div class="tarif-fontionnement">
+
+
+
+      <div class="ticket-base">
+        <h3>1 ticket = 1 course*</h3>
+        <p>*3,5 km de distance maximum</p>
+        <p>Livraison dans la journée (délais de 2h minimum)</p>
+        <p>Colis de moins de 5 kg et de moins de 50 x 39 x 15cm</p>
+      </div>
+      <div class="ticket-option">
+        <div class="urgence">
+          <div class="plus">
+            <p>+</p>
+          </div>
+          <div class="option"><p>1 ticket pour une course en moins de 2h</p></div>
+          <div class="option"><p>2 tickets pour une course en moins de 45 min</p></div>
+        </div>
+        <div class="volume">
+          <div class="plus">
+            <p>+</p>
+          </div>
+          <div class="option"><p>1 ticket pour une course de plus de 5kg ou  50 x 39 x 15 cm</p></div>
+
+        </div>
+        <div class="distance">
+          <div class="plus">
+            <p>+</p>
+          </div>
+          <div class="option"><p>1 ticket pour une course entre 3,5km et 7km</p></div>
+          <div class="option"><p>2 tickets pour une course entre 7km et 10,5km</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
