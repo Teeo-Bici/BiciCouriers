@@ -1,7 +1,24 @@
 .tarif-main-container {
   position: relative;
   width: 100vw;
-  height: 150vh;
+  height: 100vh;
+  .oeuf-1 {
+    position: absolute;
+    left: 0px;
+    top: 70%;
+  }
+
+  .oeuf-2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  .oeuf-3 {
+    position: absolute;
+    right: 0px;
+    top: 80%;
+  }
 }
 
 .tarif-second-container {
@@ -10,56 +27,149 @@
   height: 90%;
   top: 5%;
   left: 10%;
-  background-color: red;
-}
-
-.oeuf-1 {
-  position: absolute;
-  left: 0px;
-  top: 50%;
-}
-
-.oeuf-2 {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.oeuf-3 {
-  position: absolute;
-  right: 0px;
-  top: 30%;
+  // background-color: red;
 }
 
 .tarif-title {
+  margin-bottom: 5%;
   padding-left: 10%;
+  h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 68px;
+    line-height: 72px;
+    color: $blue;
+  }
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    color: $blue;
+  }
 }
+
+
+
 .all-tarifs {
  display: flex;
  justify-content: space-around;
+ margin-bottom: 5%;
+  .price {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 135.4%;
+    color: white;
+  }
+  h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: white;
+  }
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: white;
+
+  }
 }
+
 .tarif-course {
   background-color: $blue;
   width: 30%;
+  min-height: 350px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  padding-bottom: 60px;
+  position: relative;
+  .bici-button {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    left: 10%;
+  }
 }
 
 .tarifs-carnets {
   background-color: $blue;
   width: 30%;
-}
+  min-height: 350px;
+  border-radius: 5px;
+  padding: 15px;
+  padding-bottom: 60px;
+  position: relative;
+  text-align: center;
 
-.carnets {
+  .bici-button {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    left: 10%;
+  }
 
 }
 
 .tarif-abonnement {
   background-color: $blue;
   width: 30%;
+  min-height: 350px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  padding-bottom: 60px;
+    position: relative;
+  .bici-button {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    left: 10%;
+  }
 }
+
+.carnets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carnet-units {
+  text-align: center;
+  margin: 10px;
+}
+
 
 .tarif-fontionnement {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 3%;
+  h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $blue;
+  }
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $blue;
+  }
 }
 
 .ticket-base {
@@ -75,9 +185,12 @@
 
 }
 .option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: $blue 2px solid;
   border-radius: 4px;
-  height: 90%;
+  height: 50%;
   width: 100%;
   margin-top: 10px;
 }
@@ -94,5 +207,17 @@
 .distance {
   width: 30%;
 
+}
+.plus {
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 29px;
+    text-align: center;
+    color: $blue;
+    margin-top: 20px;
+  }
 }
 
