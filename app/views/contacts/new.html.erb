@@ -1,0 +1,47 @@
+<div class="contact-main-container">
+  <div class="contact-eggs-1">
+    <%= image_tag "contact/oeuf-1.svg" %>
+  </div>
+  <div class="contact-eggs-2">
+    <%= image_tag "contact/oeuf-2.svg" %>
+  </div>
+
+  <div class="contact-second-container">
+
+    <div class="contact-container">
+      <div class="title-container">
+        <h1>Contactez-nous*,</h1>
+        <h2>demandez-nous un devis !</h2>
+        <p>*Internet c’est bien pratique, mais vous pouvez aussi nous appeler, ou profitons de vivre à Nantes pour échanger ? Passez nous voir !</p>
+      </div>
+      <div class="form-container">
+        <h3>Nous écrire</h3>
+
+        <%= simple_form_for @contact do |f| %>
+          <%= f.input :name, label: false, :required => true, :placeholder => 'nom*', class: "bici-form" %>
+          <%= f.input :email, label: false, :required => true, :placeholder => 'email*' %>
+          <%= f.input :phone, label: false, :required => true, :placeholder => 'téléphone*' %>
+          <%= f.input :message, label: false, :as => :text, :required => true,:placeholder => 'message' %>
+          <div class= "hidden">
+            <%= f.input :nickname, :hint => 'Leave this field blank!', class: "hidden" %>
+          </div>
+          <div>
+            <%= f.button :submit, 'Send message', :class=> "btn bici-button" %>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+    <div class="address-container">
+      <div class="address">
+        <p><strong> BiciCouriers – Le Grand Bain, 21 Allée Baco, 44000 Nantes</strong></p>
+        <p>08:00 à 19:00</p>
+        <p>07.81.66.03.50</p>
+        <p>bicicouriersnantes@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
