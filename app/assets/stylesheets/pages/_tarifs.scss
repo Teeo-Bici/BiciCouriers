@@ -1,0 +1,98 @@
+.tarif-main-container {
+  position: relative;
+  width: 100vw;
+  height: 150vh;
+}
+
+.tarif-second-container {
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  top: 5%;
+  left: 10%;
+  background-color: red;
+}
+
+.oeuf-1 {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+}
+
+.oeuf-2 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.oeuf-3 {
+  position: absolute;
+  right: 0px;
+  top: 30%;
+}
+
+.tarif-title {
+  padding-left: 10%;
+}
+.all-tarifs {
+ display: flex;
+ justify-content: space-around;
+}
+.tarif-course {
+  background-color: $blue;
+  width: 30%;
+}
+
+.tarifs-carnets {
+  background-color: $blue;
+  width: 30%;
+}
+
+.carnets {
+
+}
+
+.tarif-abonnement {
+  background-color: $blue;
+  width: 30%;
+}
+
+.tarif-fontionnement {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.ticket-base {
+  border: $blue 2px solid;
+  border-radius: 4px;
+  width: 97%;
+  margin:  0px auto;
+}
+
+.ticket-option {
+  display: flex;
+  justify-content: space-around
+
+}
+.option {
+  border: $blue 2px solid;
+  border-radius: 4px;
+  height: 90%;
+  width: 100%;
+  margin-top: 10px;
+}
+.urgence {
+  width: 30%;
+
+}
+
+.volume {
+  width: 30%;
+
+}
+
+.distance {
+  width: 30%;
+
+}
+

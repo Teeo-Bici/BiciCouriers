@@ -1,0 +1,70 @@
+<div class="tarif-main-container">
+  <div class="oeuf-1">
+    <%= image_tag "tarifs/oeuf-1" %>
+  </div>
+  <div class="oeuf-2">
+    <%= image_tag "tarifs/oeuf-2" %>
+  </div>
+  <div class="oeuf-3">
+    <%= image_tag "tarifs/oeuf-3" %>
+  </div>
+  <div class="tarif-second-container">
+    <div class="tarif-title">
+      <h1>Les tarifs</h1>
+      <p>Des formules adaptées à vos besoins</p>
+    </div>
+
+    <div class="all-tarifs">
+      <div class="tarif-course">
+        <h2>Formule à la course</h2>
+        <p>Reservez et payez votre course en un clic. </p>
+        <%= image_tag "tarifs/ticket-1.svg" %>
+        <p>5,83€ ht </p>
+        <p>le ticket</p>
+        <%= link_to new_contact_path %>
+      </div>
+
+      <div class="tarifs-carnets">
+        <h2></h2>
+        <p></p>
+        <div class="carnets">
+          <p></p>
+          <%= image_tag "tarifs/ticket-2.svg" %>
+          <p></p>
+          <p></p>
+        </div>
+          <%= link_to new_contact_path, class: "bici-button" %>
+      </div>
+
+      <div class="tarif-abonnement">
+        <h2></h2>
+        <p></p>
+        <%= image_tag "tarifs/devis.svg" %>
+        <%= link_to new_contact_path %>
+      </div>
+    </div>
+
+    <div class="tarif-fontionnement">
+      <div class="ticket-base">
+        <p>1 ticket = 1 course*</p>
+        <p>*3,5 km de distance maximum</p>
+        <p>Livraison dans la journée (délais de 2h minimum)</p>
+        <p>Colis de moins de 5 kg et de moins de 50 x 39 x 15cm</p>
+      </div>
+      <div class="ticket-option">
+        <div class="urgence">
+          <div class="option">1 ticket pour une course en moins de 2h</div>
+          <div class="option">2 tickets pour une course en moins de 45 min</div>
+        </div>
+        <div class="volume">
+          <div class="option">1 ticket pour une course de plus de 5kg ou  50 x 39 x 15 cm</div>
+
+        </div>
+        <div class="distance">
+          <div class="option">1 ticket pour une course entre 3,5km et 7km</div>
+          <div class="option">2 tickets pour une course entre 7km et 10,5km</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
