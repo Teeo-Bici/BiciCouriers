@@ -16,28 +16,38 @@
 
 .a-oeuf-2 {
   position: absolute;
-    img {
-  z-index: 15;
+  transition: 1s;
 
-  }
+  top: 10%;
+  left: 10px;
+  width: 90%;
+  // height: 100%;
+  z-index: 5;
+    img {
+    width: 105%;
+    // height: 70%;
+    }
+}
+.dual-container {
+  display: flex;
+  justify-content:space-between;
 }
 
 .a-line {
   position: absolute;
   top: 50%;
-
 }
 
 .avantages-details {
-  margin: auto;
+  margin: 13% auto;
   // background-color: red;
-  width: 30%;
-  margin-left: 150px;
+  width: 25%;
+  margin-left: 14%;
     h1 {
       font-family: Montserrat;
       font-style: normal;
       font-weight: 800;
-      font-size: 68px;
+      font-size: 55px;
       line-height: 72px;
       color: $blue;
       padding-bottom: 40px;
@@ -67,8 +77,8 @@
   // background-size: contain;
   // background-repeat: no-repeat;
   position: relative;
-
-  width: 450px;
+  margin-left: 30px;
+  width: 550px;
   height: 700px;
   z-index: 5;
 }
@@ -86,19 +96,74 @@
   position: absolute;
   transition: 1s;
 
-  top: 25px;
-  left: 25px;
-  width: 400px;
-  height: 650px;
+  top: 10%;
+  left: 15%;
+  width: 100%;
+  height: 100%;
   z-index: 5;
   .card-images {
-    margin: 60px auto;
+    img {
+    width: 70%;
+    }
   }
 }
 
 
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .avantages-details {
+    margin: 13% auto;
+    // background-color: red;
+    width: 25%;
+    margin-left: 7%;
+      h1 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 55px;
+        line-height: 72px;
+        color: $blue;
+        padding-bottom: 40px;
+      }
+      p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 25px;
+        color: $blue;
+      }
+  }
+  .back-card {
+    width: 400px;
+    top: 17%;
+  }
+  .a-oeuf-1 {
+    display: none;
+  }
+}
 
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .dual-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .avantages-main-container {
+    overflow: scroll;
+  }
+  .a-line {
+   display: none;
+  }
+
+}
+
+// @media (max-width: 540px) {
+//   /* For a screen < 540px, this CSS will be read */
+//   .dual-container {
+//   }
+// }
 
 
 

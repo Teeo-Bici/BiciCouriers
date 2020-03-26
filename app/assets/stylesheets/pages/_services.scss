@@ -1,7 +1,9 @@
 .long-container {
   height: 100vh;
   width: 3000px;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  // white-space: nowrap;
   position: relative;
 }
 
