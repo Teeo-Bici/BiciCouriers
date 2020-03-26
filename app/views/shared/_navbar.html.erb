@@ -1,10 +1,11 @@
 <div id="swup" class="main-nav">
-  <% color_text = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show') ? 'text-white' : 'text-blue'  %>
-  <% color_user = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show') ? 'user-white' : 'user-blue'  %>
+  <% color_text = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show' || params[:action] == 'story') ? 'text-white' : 'text-blue'  %>
+  <% color_bici = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show') ? 'text-white' : 'text-blue'  %>
+  <% color_user = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show' || params[:action] == 'story') ? 'user-white' : 'user-blue'  %>
 
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to root_path, class: "navbar-brand #{color_text}" do %>
+    <%= link_to root_path, class: "navbar-brand #{color_bici}" do %>
       <h1 class="logo">BICI<strong>COURIERS</strong></h1>
       <% end %>
 
@@ -17,13 +18,13 @@
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Notre histoire", "#", class: "nav-link #{color_text}" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Les services", services_path, class: "nav-link #{color_text}" %>
           </li>
           <li class="nav-item">
             <%= link_to "Les avantages", avantages_path, class: "nav-link #{color_text}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Notre histoire", histoire_path, class: "nav-link #{color_text}" %>
           </li>
           <li class="nav-item">
             <%= link_to "Les tarifs", "#", class: "nav-link #{color_text}" %>
@@ -41,13 +42,13 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Notre histoire", "#", class: "nav-link #{color_text}" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Les services", services_path, class: "nav-link #{color_text}" %>
           </li>
           <li class="nav-item">
             <%= link_to "Les avantages", avantages_path, class: "nav-link #{color_text}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Notre histoire", histoire_path, class: "nav-link #{color_text}" %>
           </li>
           <li class="nav-item">
             <%= link_to "Les tarifs", "#", class: "nav-link #{color_text}" %>
