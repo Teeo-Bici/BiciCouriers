@@ -13,9 +13,7 @@ Service.create(
     title: "Transport urgent",
     content: "Vous avez une demande express ? Vous souhaitez faire livrer une lettre ou un colis pendant les heures de pointes ? La livraison express  par coursiers à vélos sur Nantes est la plus rapide ! Nos coursiers pratique le cyclisme sportif et mettent leur efficacité à votre service en livrant votre colis 45 minutes seulement après votre demande.",
     images: "services/relai_poste.png",
-    details: "La légendaire tournée du facteur est trop tardive ?
-    Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose.
-    Plus besoin de courir à la poste avant qu’elle ferme !"
+    details: "La légendaire tournée du facteur est trop tardive ? Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose. Plus besoin de courir à la poste avant qu’elle ferme !"
   }
 )
 
@@ -24,9 +22,7 @@ Service.create(
     title: "Ship from store",
     content: "Facilitez la logistique de vos produits entre vos différents magasins ! Un coursier enlève la marchandise d’un magasin A vers un magasin B ou directement chez votre client, notamment lors des périodes de soldes où les stocks s’écoulent rapidement. Un avantage logistique qui n’est pas dépendant du trafic automobile de la ville.",
     images: "services/relai_poste.png",
-    details: "La légendaire tournée du facteur est trop tardive ?
-    Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose.
-    Plus besoin de courir à la poste avant qu’elle ferme !"
+    details: "La légendaire tournée du facteur est trop tardive ? Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose. Plus besoin de courir à la poste avant qu’elle ferme !"
   }
 )
 

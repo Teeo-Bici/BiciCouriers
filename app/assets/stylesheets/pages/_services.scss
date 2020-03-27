@@ -1,9 +1,8 @@
 .long-container {
   height: 100vh;
-  width: 3000px;
+  // width: 3000px;
   overflow-x: scroll;
   overflow-y: hidden;
-  // white-space: nowrap;
   position: relative;
 }
 
@@ -69,6 +68,8 @@
 
 .service-board {
   display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   position: absolute;
   top: 20%;
   left: 750px;
@@ -81,6 +82,7 @@
   margin: 15px;
   text-align: center;
   border-radius: 5px;
+
   p {
   color: white;
   font-family: Montserrat;
@@ -102,6 +104,8 @@
 }
 .ghost-card_service {
   position: relative;
+  margin-bottom: 20px;
+  flex: 0 0 auto;
 }
 
 .s-button {
