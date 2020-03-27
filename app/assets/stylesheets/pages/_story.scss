@@ -23,7 +23,7 @@
   width: 80%;
   height: 80%;
   left:10%;
-  background-color: red;
+  // background-color: red;
   position: absolute;
   top: 10%;
   display: flex;
@@ -75,10 +75,38 @@
 
 
 @media (max-width: 960px) {
-
+  .story-details {
+    width: 70%;
+    h1 {
+      font-size: 55px;
+      line-height: 60px;
+    }
+    p {
+      line-height: 22px;
+    }
+  }
 }
 @media (max-width: 720px) {
-
+  .story-second-container {
+    flex-direction: column;
+  }
+  .story-details {
+    width: 100%;
+    h1 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+    p {
+      line-height: 19px;
+    }
+  }
+  .story-image {
+    width: 100%;
+    height: 30%;
+  }
+  .blue-back {
+    width: 100%;
+  }
 }
 @media (max-width: 540px) {
 
