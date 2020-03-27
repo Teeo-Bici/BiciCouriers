@@ -133,6 +133,7 @@
 .tarif-fonctionnement {
   text-align: center;
   margin-top: 3%;
+  height: 70%;
   h3 {
     font-family: Montserrat;
     font-style: normal;
@@ -157,11 +158,13 @@
   border-radius: 4px;
   width: 97%;
   margin:  0px auto;
+  padding-top: 10px;
 }
 
 .ticket-option {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+
 
 }
 .option {
@@ -170,9 +173,10 @@
   align-items: center;
   border: $blue 2px solid;
   border-radius: 4px;
-  height: 50%;
+  height: 40%;
   width: 100%;
   margin-top: 10px;
+  padding: 10px 15px 0px 15px;
 }
 .urgence {
   width: 30%;
@@ -232,6 +236,19 @@
       font-size: 20px;
       line-height: 30px;
     }
+  }
+  .tarif-fonctionnement {
+    h3 {
+      font-size: 20px;
+      line-height: 29px;
+    }
+    p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+  .option {
+    padding: 20px 15px 0px 15px;
   }
 }
 
