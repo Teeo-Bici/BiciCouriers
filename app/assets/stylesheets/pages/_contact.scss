@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-
+  overflow: hidden;
 }
 
 
@@ -39,7 +39,7 @@
       font-family: Montserrat;
       font-style: normal;
       font-weight: 800;
-      font-size: 68px;
+      font-size: 60px;
       line-height: 72px;
       color: $blue;
     }
@@ -104,3 +104,52 @@
   }
   }
 }
+
+@media (max-width: 720px) {
+  .contact-main-container {
+    height: 1200px;
+  }
+  .contact-container {
+    width: 80%;
+    height: 100%;
+    .title-container {
+      h1 {
+        font-size: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+  .address-container {
+    // background-color: blue;
+    width: 50%;
+    .address {
+    margin-left: 40px;
+    }
+  }
+}
+@media (max-width: 540px) {
+  .contact-second-container {
+    // background-color: red;
+    width: 90%;
+    top: 6%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .address-container {
+    margin-top: 7%;
+    width: 100%;
+    .address {
+      margin-left: 15px;
+    }
+  }
+}
+
+
+
