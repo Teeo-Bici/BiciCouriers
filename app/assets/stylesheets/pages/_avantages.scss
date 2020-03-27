@@ -145,18 +145,38 @@
 
 @media (max-width: 720px) {
   /* For a screen < 720px, this CSS will be read */
+  .avantages-main-container {
+    overflow: hidden;
+    width: 100vw;
+    height: 1000px;
+  }
+
   .dual-container {
     flex-direction: column;
     align-items: center;
+    height: 100%;
   }
 
-  .avantages-main-container {
-    overflow: scroll;
-  }
   .a-line {
    display: none;
   }
+  .avantages-details {
+    // margin: 13% auto;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    // background-color: red;
+    width: 50%;
+    margin-left: 14%;
+  }
+  .avantages-cards {
+    // background-color: blue;
+    width: 82%;
 
+  }
+  .back-card {
+    top:0px;
+    margin-left:0px;
+  }
 }
 
 // @media (max-width: 540px) {
