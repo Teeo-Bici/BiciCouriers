@@ -1,5 +1,5 @@
 import HorizontalScroll from '@oberon-amsterdam/horizontal';
-const horizontal = new HorizontalScroll({ container: document.querySelector('.service-board') });
+const horizontal = new HorizontalScroll({ container: document.querySelector('.long-container') });
 
 
 const movement = () => {
