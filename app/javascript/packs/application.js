@@ -1,8 +1,8 @@
 import "bootstrap";
 
-import  { movement, scrollFn } from '../shared/services.js';
+import  { movement } from '../shared/services.js';
 import  { cardsFly } from '../shared/avantages.js';
 
-cardsFly();
 movement();
+cardsFly();
 

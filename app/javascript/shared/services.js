@@ -1,8 +1,11 @@
 import HorizontalScroll from '@oberon-amsterdam/horizontal';
-const horizontal = new HorizontalScroll({ container: document.querySelector('.long-container') });
 
 
 const movement = () => {
+  if (document.querySelector('.long-container') === null) {
+    return
+  }
+  const horizontal = new HorizontalScroll({ container: document.querySelector('.long-container') });
   horizontal.on('scroll', (e) => {
     console.log(e);
 
