@@ -5,9 +5,17 @@ const movement = () => {
   if (document.querySelector('.long-container') === null) {
     return
   }
-  const horizontal = new HorizontalScroll({ container: document.querySelector('.long-container') });
+  console.log(document);
+  const horizontal = new HorizontalScroll(
+    {
+    container: document.querySelector('.long-container'),
+    scrollAmountStep: 100,
+    scrollAmount: 100,
+    }
+  );
+    console.log(horizontal);
+
   horizontal.on('scroll', (e) => {
-    console.log(e);
 
     const oeufDiv = document.querySelector('.oeuf-1');
     const lineDiv = document.querySelector('.plein');

@@ -1,6 +1,5 @@
 <!-- SERVICES -->
 
-<div class="test-contain">
 <div class="long-container">
 
   <div class="long-line dashed">
@@ -23,7 +22,7 @@
 
     <div class="services-info-container">
       <div class="services-info-title">
-      <h1>Nos Services</h1>
+        <h1>Nos Services</h1>
       </div>
       <div class="services-info-text">
         <p>En tant que coursiers professionnels à Nantes, nous mettons tout en oeuvre pour répondre à vos besoins de façon professionnelle, rapide et efficace. Nous sommes des experts en livraison urgente et express. Nos vélos cargos nous permettent de transporter même les marchandises les plus encombrantes.</p>
@@ -32,7 +31,7 @@
 
     <div class="service-board">
       <% @services.each do |service| %>
-        <div class="ghost-card_service">
+      <div class="ghost-card_service">
         <div class="card-service">
           <div class="service-title">
             <h2> <%= service.title %> </h2>
@@ -44,7 +43,7 @@
         <div class="service-button">
           <%= link_to "En savoir plus", service_path(service), class: 's-button' %>
         </div>
-        </div>
+      </div>
       <% end %>
     </div>
 
@@ -54,7 +53,4 @@
     <%= image_tag 'services/oeuf_2.svg' %>
   </div>
 
-</div>
-<div class="long-container-2">
-</div>
 </div>
