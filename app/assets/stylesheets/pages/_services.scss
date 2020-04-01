@@ -1,10 +1,8 @@
 .long-container {
   // background-color: pink;
-  height: 100%;
-  width: 100%;
-  // width: 3000px;
-  display: flex;
   height: 100vh;
+  width: 100vw;
+  display: flex;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -43,7 +41,7 @@
   height: 330px;
   position: fixed;
   top: 10%;
-  left: 600px;
+  left: 500px;
 }
 
 .oeuf-2 {
@@ -77,6 +75,7 @@
 
 .service-board {
   // background-color: blue;
+  overflow-x: scroll;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -187,6 +186,38 @@
     border-radius: 5px;
     color: $pink;
     width: 250px;
+  }
+}
+
+@media (max-width: 960px) {
+  .services-info-container {
+    padding-top: 10%;
+  }
+}
+@media (max-width: 720px) {
+  .ellipse-1 {
+    display: none;
+  }
+  .oeuf-1 {
+    left: 450px;
+  }
+}
+@media (max-width: 540px) {
+  .service-board {
+    // background-color: blue;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: absolute;
+    top: 20%;
+    left: 400px;
+  }
+  .plein {
+    max-width:2000px;
+  }
+  .dashed {
+    max-width:2000px;
   }
 }
 

@@ -19,14 +19,13 @@ const movement = () => {
 
     const oeufDiv = document.querySelector('.oeuf-1');
     const lineDiv = document.querySelector('.plein');
-    // const LgContainer = document.querySelector('.test-contain');
-    // let h_pos = pageXOffset;
-    // let v_pos = pageYOffset;
-    // console.log(h_pos);
-    // console.log(v_pos);
-    // LgContainer.style.width = 2000 + (e) + 'px';
-    const lineSize = lineDiv.style.width = 200 + (e * 1.6) + 'px';
-    const EggLeft = oeufDiv.style.left = 600 + (e / 6) + 'px';
+    console.log(e);
+    const lineSize = Math.min((200 + (e * 1.6)), 2800);
+    const EggLeft = Math.min((450 + (e / 7.3)), 2800);
+    if (e < 2450) {
+    lineDiv.style.width = lineSize + 'px';
+    oeufDiv.style.left = EggLeft + 'px';
+    }
   });
 };
 
