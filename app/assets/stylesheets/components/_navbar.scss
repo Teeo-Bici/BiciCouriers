@@ -10,9 +10,8 @@
   flex-grow: 0;
 }
 
-.nav-oeuf-1, .nav-oeuf-2 {
+.nav-oeuf-1, .nav-oeuf-2, .nav-contact {
   display:none;
-  z-index:0;
 }
 .logo {
   font-family: Montserrat;
@@ -45,22 +44,12 @@
   width: 38px;
 }
 
-// .collapse {
-//   transition: 0s;
-// }
 .collapsing {
   transition: 0s;
 }
-// @media (max-width: 960px) {
-
-// }
-
-// @media (max-width: 720px) {
-
-// }
-
 
 @media (max-width: 575px) {
+
   .nav-oeuf-1 {
     display: initial;
     position: absolute;
@@ -71,18 +60,22 @@
     right: 0px;
     top: 162px;
   }
+  .nav-contact {
+    display: initial;
+    padding-top: 40px;
+  }
 
   .navbar {
     background-color: white;
     h1 {
-    color: black;
+    color: $blue;
     }
   }
   .nav-item {
     margin-top: 20px;
+    z-index:30;
     a {
       font-size: 25px;
-      z-index:30;
     }
   }
   .navbar-collapse {
@@ -93,6 +86,9 @@
       margin: 5px -16px -16px -16px !important;
       text-align: center;
     }
+  }
+  .text-nav {
+    color: white !important;
   }
 }
 
