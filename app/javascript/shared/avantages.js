@@ -1,5 +1,8 @@
 const cardsFly = () => {
   const cards = document.querySelectorAll(".avantages-card");
+    console.log(cards);
+    console.log('coucou');
+
     cards.forEach((card) => {
     card.addEventListener("click", (event) => {
     let offsetLeft = 0;
@@ -14,4 +17,3 @@ const cardsFly = () => {
 }
 
 export { cardsFly };
-    //prevents the page from redirecting

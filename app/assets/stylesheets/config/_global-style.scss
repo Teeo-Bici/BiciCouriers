@@ -6,20 +6,6 @@
   top: 0px;
 }
 
-.social-container {
-  height: 120px;
-  width: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  position: absolute;
-  bottom: 50px;
-  left: 10px;
-  color: white;
-  transition: 0.5s;
-}
-
 
 .text-white {
   color: white !important;
@@ -31,25 +17,3 @@
 
 .hidden { display: none; }
 
-@media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  .social-container {
-    bottom: 10px;
-    left: 10px;
-  }
-}
-@media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
-  .social-container {
-    bottom: 10px;
-    right: 10px;
-    flex-direction: row;
-    height: 30px;
-    width: 120px;
-  }
-}
-@media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
-  .social-container {
-  }
-}
