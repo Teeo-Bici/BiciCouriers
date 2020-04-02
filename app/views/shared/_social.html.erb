@@ -1,6 +1,20 @@
+<% color_text = (params[:controller] == 'pages' && params[:action] == 'home') ? 'text-white' : 'text-blue'  %>
+
 <div class="social-container">
-  <i class="fab fa-twitter"></i>
-  <i class="fab fa-facebook-f"></i>
-  <i class="fab fa-linkedin-in"></i>
-  <i class="fab fa-instagram"></i>
+  <%= link_to "https://twitter.com/bicinantes?lang=fr" do %>
+    <i class="fab fa-twitter scale <%= color_text %>"></i>
+  <% end %>
+
+  <%= link_to "https://www.facebook.com/bicicouriersnantes/" do %>
+    <i class="fab fa-facebook-f scale <%= color_text %>"></i>
+  <% end %>
+
+  <%= link_to "https://www.linkedin.com/company/18706458" do %>
+    <i class="fab fa-linkedin-in scale <%= color_text %>"></i>
+  <% end %>
+
+  <%= link_to "https://www.instagram.com/bicicouriers_nantes/" do %>
+    <i class="fab fa-instagram scale <%= color_text %>"></i>
+  <% end %>
+
 </div>

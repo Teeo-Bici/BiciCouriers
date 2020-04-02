@@ -10,6 +10,10 @@
   flex-grow: 0;
 }
 
+.nav-oeuf-1, .nav-oeuf-2 {
+  display:none;
+  z-index:0;
+}
 .logo {
   font-family: Montserrat;
   font-style: italic;
@@ -40,3 +44,59 @@
 .avatar {
   width: 38px;
 }
+
+// .collapse {
+//   transition: 0s;
+// }
+.collapsing {
+  transition: 0s;
+}
+// @media (max-width: 960px) {
+
+// }
+
+// @media (max-width: 720px) {
+
+// }
+
+
+@media (max-width: 575px) {
+  .nav-oeuf-1 {
+    display: initial;
+    position: absolute;
+  }
+  .nav-oeuf-2 {
+    display: initial;
+    position: absolute;
+    right: 0px;
+    top: 162px;
+  }
+
+  .navbar {
+    background-color: white;
+    h1 {
+    color: black;
+    }
+  }
+  .nav-item {
+    margin-top: 20px;
+    a {
+      font-size: 25px;
+      z-index:30;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      transition: 0s;
+      height: 100vh;
+      background-color: #153A7E;
+      margin: 5px -16px -16px -16px !important;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+

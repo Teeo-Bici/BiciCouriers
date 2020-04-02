@@ -41,6 +41,13 @@
             </div>
           </li>
         <% else %>
+          <div class="nav-oeuf-1">
+            <%= image_tag 'navbar/oeuf-1.svg' %>
+          </div>
+          <div class="nav-oeuf-2">
+            <%= image_tag 'navbar/oeuf-2.svg' %>
+          </div>
+
           <li class="nav-item">
             <%= link_to "Les services", services_path, class: "nav-link #{color_text}" %>
           </li>

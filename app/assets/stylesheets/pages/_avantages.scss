@@ -16,16 +16,14 @@
 
 .a-oeuf-2 {
   position: absolute;
-  transition: 1s;
+  transition: 0.2s;
 
   top: 10%;
   left: 10px;
   width: 90%;
-  // height: 100%;
   z-index: 5;
     img {
     width: 105%;
-    // height: 70%;
     }
 }
 .dual-container {
@@ -72,23 +70,18 @@
 }
 
 .back-card {
-  // background-image: asset-url("back-card.svg");
-  // background-position: center;
-  // background-size: contain;
-  // background-repeat: no-repeat;
   position: relative;
   margin-left: 30px;
   width: 550px;
   height: 700px;
   z-index: 5;
-}
-
-.back-card:hover {
-  .back-card-one {
-  transform: rotate(10deg);
-  }
-  .back-card-two {
-  transform: rotate(-10deg);
+  &:hover {
+    .back-card-one {
+    transform: rotate(6deg);
+    }
+    .back-card-two {
+    transform: rotate(-6deg);
+    }
   }
 }
 
@@ -110,10 +103,8 @@
 
 
 @media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
   .avantages-details {
     margin: 13% auto;
-    // background-color: red;
     width: 25%;
     margin-left: 7%;
       h1 {
@@ -144,7 +135,6 @@
 }
 
 @media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
   .avantages-main-container {
     overflow: hidden;
     width: 100vw;
