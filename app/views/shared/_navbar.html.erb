@@ -1,6 +1,6 @@
 <div class="main-nav">
-  <% color_text = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show' || params[:action] == 'story') ? 'text-white' : 'text-blue'  %>
-  <% color_bici = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show') ? 'text-white' : 'text-blue'  %>
+  <% color_text = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show' || params[:action] == 'story') ? 'text-to-white' : 'text-to-blue'  %>
+  <% color_bici = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show') ? 'text-to-white' : 'text-to-blue'  %>
   <% color_user = (params[:controller] == 'pages' || params[:controller] == 'services') && (params[:action] == 'home' || params[:action] == 'show' || params[:action] == 'story') ? 'user-white' : 'user-blue'  %>
 
 
@@ -29,13 +29,13 @@
             <%= link_to "Les avantages", avantages_path, class: "nav-link #{color_text} text-nav" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Notre histoire", histoire_path, class: "nav-link #{color_text}" %>
+            <%= link_to "Notre histoire", histoire_path, class: "nav-link #{color_text} text-nav" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Les tarifs", tarifs_path, class: "nav-link #{color_text}" %>
+            <%= link_to "Les tarifs", tarifs_path, class: "nav-link #{color_text} text-nav" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Contactez-nous", new_contact_path, class: "nav-link #{color_text}" %>
+            <%= link_to "Contactez-nous", new_contact_path, class: "nav-link #{color_text} text-nav" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "#{color_user}.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

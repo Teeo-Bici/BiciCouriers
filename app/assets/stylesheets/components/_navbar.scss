@@ -48,6 +48,15 @@
   transition: 0s;
 }
 
+.text-to-white {
+  color: white !important;
+}
+
+.text-to-blue {
+  color: $blue !important;
+}
+
+
 @media (max-width: 575px) {
 
   .nav-oeuf-1 {
