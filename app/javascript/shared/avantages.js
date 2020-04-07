@@ -1,7 +1,7 @@
 const cardsFly = () => {
   const cards = document.querySelectorAll(".avantages-card");
-    console.log(cards);
-    console.log('coucou');
+    // console.log(cards);
+    // console.log('coucou');
 
     cards.forEach((card) => {
     card.addEventListener("click", (event) => {
