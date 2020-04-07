@@ -1,0 +1,20 @@
+<div class="main-side-nav">
+
+  <div class="user-infos">
+    <p id="name"> <%= current_user.first_name%> <strong> <%=current_user.last_name %></strong></p>
+    <p id="company"> <%= current_user.company %> </p>
+    <p id="email"> <%= current_user.email %> </p>
+    <p id="phone"> <%= current_user.phone %> </p>
+  </div>
+  <div class="button-list">
+    <ul>
+      <li> <%= link_to "Mes informations", "#"  %> </li>
+      <li> <%= link_to "Mes commandes", courses_path  %></li>
+      <li> <%= link_to "Mes carnets", "carnet_path"  %></li>
+    </ul>
+  </div>
+  <div class="side-oeuf-1">
+    <%= image_tag 'navbar/oeuf-side-1.svg' %>
+  </div>
+
+</div>

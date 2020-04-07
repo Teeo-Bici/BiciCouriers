@@ -1,0 +1,83 @@
+.main-side-nav {
+  // background-color:pink;
+  width: 20vw;
+  height: 100vh;
+  // position: fixed;
+
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+
+
+  margin-top: 100px;
+  border-right: 2px white solid;
+  padding-left: 40px;
+
+  .user-infos {
+    margin-left: 20px;
+    #name {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: white;
+    }
+
+    #company {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: white;
+    }
+
+    #phone {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+      color: white;
+    }
+
+    #email {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+      color: white;
+    }
+  }
+
+  .button-list {
+    margin-top: 50px;
+    ul {
+      margin-left: -20px;
+    }
+    li {
+      padding-top: 20px;
+      list-style: none;
+    }
+    a {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: white;
+      &:active {
+        color: $yellow;
+        font-weight: 600;
+      }
+    }
+  }
+  .side-oeuf-1 {
+    position: absolute;
+    bottom: 100px;
+    left:0px;
+  }
+}

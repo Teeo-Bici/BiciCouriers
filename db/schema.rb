@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_152156) do
+ActiveRecord::Schema.define(version: 2020_04_07_135710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,62 @@ ActiveRecord::Schema.define(version: 2020_03_24_152156) do
     t.datetime "updated_at", null: false
     t.string "image_pour"
     t.string "image_contre"
+  end
+
+  create_table "bikes", force: :cascade do |t|
+    t.integer "max_weight"
+    t.integer "max_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carnets", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "ticket_nb"
+    t.string "ticket_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carnets_on_user_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "carnet_id"
+    t.bigint "bike_id"
+    t.integer "ticket_nb"
+    t.integer "distance"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.integer "price"
+    t.index ["bike_id"], name: "index_courses_on_bike_id"
+    t.index ["carnet_id"], name: "index_courses_on_carnet_id"
+    t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "drops", force: :cascade do |t|
+    t.bigint "course_id"
+    t.string "address"
+    t.integer "start_hour"
+    t.integer "end_hour"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
+    t.index ["course_id"], name: "index_drops_on_course_id"
+  end
+
+  create_table "pickups", force: :cascade do |t|
+    t.bigint "course_id"
+    t.string "address"
+    t.integer "start_hour"
+    t.integer "end_hour"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
+    t.index ["course_id"], name: "index_pickups_on_course_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -39,8 +95,18 @@ ActiveRecord::Schema.define(version: 2020_03_24_152156) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name"
+    t.string "first_name"
+    t.string "phone"
+    t.string "company"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "carnets", "users"
+  add_foreign_key "courses", "bikes"
+  add_foreign_key "courses", "carnets"
+  add_foreign_key "courses", "users"
+  add_foreign_key "drops", "courses"
+  add_foreign_key "pickups", "courses"
 end
