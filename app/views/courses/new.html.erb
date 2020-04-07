@@ -1,0 +1,16 @@
+<div class="course-main-container">
+<%= form_for @course do |f| %>
+
+   <%= f.fields_for :drops do |drop| %>
+       <%= drop.text_field :date %>
+   <% end %>
+
+   <%= f.fields_for :pickups do |pickup| %>
+       <%= pickup.text_field :date %>
+   <% end %>
+
+   <%= f.text_field :distance %>
+   <%= f.submit %>
+
+<% end %>
+</div>

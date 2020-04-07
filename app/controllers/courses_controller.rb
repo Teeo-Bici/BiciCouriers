@@ -7,6 +7,8 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    drop = @course.drops.build
+    pickup = @course.pickups.build
   end
 
   def create
@@ -21,7 +23,8 @@ class CoursesController < ApplicationController
 private
 
   def course_params
-        params.require(:course).permit()
+        params.require(:course).permit(:id, :ticket_nb, :distance, :details, :status, :price, drops_attributes:[:id, :date, :address, :start_hour, :end_hour], pickups_attributes:[:id, :date, :address, :start_hour, :end_hour])
   end
 
 end
+

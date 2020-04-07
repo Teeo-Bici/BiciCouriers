@@ -12,8 +12,14 @@ Rails.application.routes.draw do
 
 
   resources :services, only: [:index, :show]
+
   resources :avantages, only: [:index]
+
   resources :contacts, only: [:new, :create]
-  resources :courses, only: [:new, :create, :index]
+
+  resources :courses, only: [:new, :create, :index] do
+    resources :drops, only: [ :new, :create ]
+    resources :pickup, only: [ :new, :create ]
+  end
 
 end
