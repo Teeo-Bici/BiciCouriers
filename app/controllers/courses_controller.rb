@@ -9,10 +9,16 @@ class CoursesController < ApplicationController
     @course = Course.new
     drop = @course.drops.build
     pickup = @course.pickups.build
+
+    @drop = Drop.geocoded
+
+    @drop_marker = [lat: @drop.first.latitude, lng: @drop.first.longitude]
+
   end
 
   def create
     @course = Course.new(course_params)
+    # raise
     if @course.save
       redirect_to courses_path
     else
@@ -23,7 +29,7 @@ class CoursesController < ApplicationController
 private
 
   def course_params
-        params.require(:course).permit(:id, :ticket_nb, :distance, :details, :status, :price, drops_attributes:[:id, :date, :address, :start_hour, :end_hour], pickups_attributes:[:id, :date, :address, :start_hour, :end_hour])
+        params.require(:course).permit(:id, :ticket_nb, :distance, :details, :status, :price, :urgence, :bike_id, :user_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
   end
 
 end

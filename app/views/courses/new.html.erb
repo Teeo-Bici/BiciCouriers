@@ -7,7 +7,7 @@
 <div class="first-conatiner">
   <div class="rammassage">
     <%= f.fields_for :pickups do |pickup| %>
-        <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form' %>
+        <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
     <% end %>
     <%= f.fields_for :pickups do |pickup| %>
         <%= pickup.date_field :date, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
@@ -19,7 +19,7 @@
   </div>
   <div class="livraison">
     <%= f.fields_for :drops do |drop| %>
-        <%= drop.text_field :address, label: false, :required => true, :placeholder => 'Adresse de livraison', class: 'inline-form' %>
+        <%= drop.text_field :address, label: false, :required => true, :placeholder => 'Adresse de livraison', class: 'inline-form address-input' %>
     <% end %>
     <%= f.fields_for :drops do |drop| %>
         <%= drop.date_field :date, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
@@ -30,7 +30,10 @@
   </div>
 </div>
 <div class="second-container">
-  <div id="map-container">
+  <div
+  id="map-container"
+  data-markers="<%= @drop_marker.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
   </div>
   <div class="options-container">
@@ -51,6 +54,7 @@
         <div class="urgence-image"></div>
         <p>Personnaliser les heures</p>
       </div>
+      <%= f.text_field :urgence, class: "hidden" %>
     </div>
 
     <div class="bikes-container">
@@ -62,16 +66,35 @@
         <div class="bike-2-image"></div>
         <p>Vélo cargo</p>
       </div>
+      <%= f.text_field :bike_id, class: "hidden" %>
     </div>
 
     <div class="total-container">
 
 
+      <%= f.text_field :user_id, class: "hidden" %>
+      <%= f.text_field :distance, class: "hidden" %>
+      <%= f.text_field :status, class: "hidden" %>
 
-      <%= f.text_field :distance %>
-      <%= f.submit %>
+      <%= f.submit class: "bici-button" %>
     </div>
   </div>
 </div>
 <% end %>
 </div>
+
+
+
+
+
+
+<!-- t.bigint "carnet_id"
+t.bigint "bike_id"
+t.integer "ticket_nb"
+t.integer "distance"
+t.string "details"
+t.datetime "created_at", null: false
+t.datetime "updated_at", null: false
+t.string "status"
+t.integer "price"
+t.integer "urgence" -->

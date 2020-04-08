@@ -6,4 +6,5 @@ class Course < ApplicationRecord
   has_many :pickups, :dependent => :destroy
   accepts_nested_attributes_for :drops
   accepts_nested_attributes_for :pickups
+
 end

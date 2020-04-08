@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem "mail_form"
+gem 'geocoder'
 
 
 group :development do
