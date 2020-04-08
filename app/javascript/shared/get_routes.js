@@ -1,0 +1,7 @@
+const getRoutes = () => {
+
+
+
+};
+
+export { getRoutes };

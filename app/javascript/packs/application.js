@@ -6,9 +6,11 @@ import  { cardsFly } from '../shared/avantages.js';
 import  { userLogo } from '../shared/navbar.js';
 import  { initMapbox } from '../shared/init_mapbox.js';
 import  { initAutocomplete } from '../shared/init_autocomplete.js';
+import  { getLongLat } from '../shared/get_long_lat.js';
 
 movement();
 cardsFly();
 userLogo();
 initMapbox();
 initAutocomplete();
+getLongLat();
