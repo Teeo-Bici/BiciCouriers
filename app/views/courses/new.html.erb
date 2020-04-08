@@ -1,16 +1,53 @@
 <div class="course-main-container">
 <%= form_for @course do |f| %>
 
-   <%= f.fields_for :drops do |drop| %>
-       <%= drop.text_field :date %>
-   <% end %>
 
-   <%= f.fields_for :pickups do |pickup| %>
-       <%= pickup.text_field :date %>
-   <% end %>
 
-   <%= f.text_field :distance %>
-   <%= f.submit %>
 
+<div class="first-conatiner">
+  <div class="rammassage">
+    <%= f.fields_for :pickups do |pickup| %>
+        <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form' %>
+    <% end %>
+    <%= f.fields_for :pickups do |pickup| %>
+        <%= pickup.date_field :date, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
+    <% end %>
+    <%= f.fields_for :pickups do |pickup| %>
+        <%= pickup.text_field :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur le ramassage ?', class: 'inline-form' %>
+    <% end %>
+
+  </div>
+  <div class="livraison">
+    <%= f.fields_for :drops do |drop| %>
+        <%= drop.text_field :address, label: false, :required => true, :placeholder => 'Adresse de livraison', class: 'inline-form' %>
+    <% end %>
+    <%= f.fields_for :drops do |drop| %>
+        <%= drop.date_field :date, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
+    <% end %>
+    <%= f.fields_for :drops do |drop| %>
+        <%= drop.text_field :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur la livraison ?', class: 'inline-form' %>
+    <% end %>
+  </div>
+</div>
+<div class="second-container">
+  <div class="map-container">
+
+  </div>
+  <div class="options-container">
+    <div class="urgence-container">
+
+    </div>
+    <div class="velo-container">
+
+    </div>
+    <div class="total-container">
+
+
+
+      <%= f.text_field :distance %>
+      <%= f.submit %>
+    </div>
+  </div>
+</div>
 <% end %>
 </div>

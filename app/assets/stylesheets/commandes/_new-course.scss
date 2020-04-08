@@ -1,0 +1,29 @@
+.first-conatiner {
+  display: flex;
+  // background-color: red;
+  justify-content: space-around;
+}
+
+.rammassage, .livraison {
+  width: 45%;
+  // margin: 10px;
+  // background-color: pink;
+}
+
+.inline-form {
+  width: 100%;
+  border:none;
+  border-bottom: 2px $yellow solid;
+  background-color: transparent;
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+  color: $white;
+  &:active {
+    box-shadow: none;
+  }
+
+}
