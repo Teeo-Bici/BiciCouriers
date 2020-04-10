@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "seeding"
 Service.destroy_all
+Avantage.destroy_all
+Bike.destroy_all
+Pickup.destroy_all
+Drop.destroy_all
+Course.destroy_all
+Carnet.destroy_all
+User.destroy_all
 
 Service.create(
   {
@@ -99,6 +106,103 @@ Avantage.create(
     image_pour: "avantages/stress.svg",
   }
 )
+
+florent = User.create(
+  {
+    email: "florent.guilbaud@gmail.com",
+    password: "secret",
+    phone: "0674236080",
+    first_name: "Florent",
+    last_name: "Guilbaud",
+    company: "BiciCouriers"
+  }
+)
+
+carnet_50 = Carnet.create(
+  {
+    user_id: florent.id,
+    ticket_nb: 100,
+    ticket_price: 420
+  }
+)
+
+bike_1 = Bike.create(
+  {
+    max_weight: 6000,
+    max_size: 20000
+  }
+)
+
+
+course_1 = Course.create(
+  {
+  user_id: florent.id,
+  carnet_id: carnet_50.id,
+  bike_id: bike_1.id,
+  ticket_nb: 3,
+  distance: 3456,
+  details: "Ouech alors",
+  status: "pending"
+  }
+)
+Pickup.create(
+  {
+  course_id: course_1.id,
+  address: "21 rue de la juiverie, 44000, Nantes",
+  start_hour: "12:00",
+  end_hour: "16:00",
+  details: "C'est un fut de bière donc lourd",
+  date: "21/03/2020"
+  }
+)
+Drop.create(
+  {
+  course_id: course_1.id,
+  address: "21 rue jeanne d'arc, 44000, Nantes",
+  start_hour: "14:00",
+  end_hour: "18:00",
+  details: "Chez un notaire",
+  date: "21/03/2020"
+  }
+)
+
+course_2 = Course.create(
+  {
+  user_id: florent.id,
+  carnet_id: carnet_50.id,
+  bike_id: bike_1.id,
+  ticket_nb: 2,
+  distance: 2341,
+  details: "Ouech alors",
+  status: "pending"
+  }
+)
+Pickup.create(
+  {
+  course_id: course_2.id,
+  address: "21 rue Amirale Du chaffault, 44100, Nantes",
+  start_hour: "12:00",
+  end_hour: "16:00",
+  details: "",
+  date: "21/03/2020"
+  }
+)
+Drop.create(
+  {
+  course_id: course_2.id,
+  address: "9 Impasse des Tilleuls",
+  start_hour: "14:00",
+  end_hour: "18:00",
+  details: "Chez un avocat",
+  date: "21/03/2020"
+  }
+)
+
+
+
+
+
+
 
 
 
