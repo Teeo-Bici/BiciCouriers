@@ -1,6 +1,6 @@
 const userLogo = () => {
   let intViewportWidth = window.innerWidth;
-  console.log(intViewportWidth);
+  // console.log(intViewportWidth);
   if ( intViewportWidth < 575) {
 
   }

@@ -36,7 +36,7 @@
   </div>
   <div class="options-container">
     <div class="urgences-container">
-      <div class="urgence-1 urgence">
+      <div class="urgence-1 urgence active">
         <div class="urgence-image"></div>
         <p>Livré dans la journée</p>
       </div>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="bikes-container">
-      <div class="bike-1 bike">
+      <div class="bike-1 bike active">
         <div class="bike-1-image"></div>
         <p>Sac à dos</p>
       </div>
@@ -68,13 +68,18 @@
     </div>
 
     <div class="total-container">
+      <div class="total-title price-line"><p>Prestation</p><div class="euro-image"></div><div class="ticket-image"></div> </div>
+      <div class="sous-total total-urgence price-line"><p>Urgence</p><p id="urgence-t">0</p></div>
+      <div class="sous-total total-distance price-line"><p>Distance</p><p id="distance-t">0</p></div>
+      <div class="sous-total total-cargo price-line"><p>Volume/poid</p><p id="cargo-t">0</p></div>
+      <div class="total total-ticket price-line"><p>Total</p><p id="total-t">0</p></div>
 
 
       <%= f.text_field :user_id, class: "hidden" %>
       <%= f.text_field :distance, class: "hidden" %>
       <%= f.text_field :status, class: "hidden" %>
 
-      <%= f.submit class: "bici-button" %>
+      <%= f.submit "Commander", class: "bici-button" %>
     </div>
   </div>
 </div>

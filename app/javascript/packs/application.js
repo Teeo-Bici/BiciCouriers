@@ -6,11 +6,16 @@ import  { cardsFly } from '../shared/avantages.js';
 import  { userLogo } from '../shared/navbar.js';
 import  { initMap } from '../shared/init_map.js';
 import  { initAutocomplete } from '../shared/init_autocomplete.js';
-import  { getLongLat } from '../shared/get_long_lat.js';
+import  { urgenceToggle } from '../shared/urgence.js';
+import  { bikeToggle } from '../shared/volume.js';
+
+
 
 movement();
 cardsFly();
 userLogo();
 initMap();
 initAutocomplete();
-getLongLat();
+urgenceToggle();
+bikeToggle();
+

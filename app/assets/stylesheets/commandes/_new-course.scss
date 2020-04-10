@@ -70,7 +70,7 @@
       height: 45px;
       transition: 0.4s;
       &:hover {
-      background-image: asset-url("commande/time-pink.svg");
+        transform: scale(1.2);
       }
     }
   }
@@ -99,7 +99,7 @@
       height: 60px;
       transition: 0.4s;
       &:hover {
-      background-image: asset-url("commande/bike-pink.svg");
+        transform: scale(1.2);
       }
     }
     .bike-2-image {
@@ -110,10 +110,99 @@
       height: 60px;
       transition: 0.4s;
       &:hover {
-      background-image: asset-url("commande/cargo-pink.svg");
+        transform: scale(1.2);
       }
     }
   }
 }
+
+.total-container {
+  // background-color: red;
+  padding: 0px 10px 10px 10px;
+  .ticket-image {
+    background-image: asset-url('tarifs/ticket-2.svg');
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .euro-image {
+    background-image: asset-url('euro.svg');
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .price-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 10px 10px;
+    align-items: center;
+  }
+  .sous-total {
+    p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 25px;
+      color: white;
+      margin: 0px 20px 0px 10px;
+    }
+  }
+  .total {
+    border-top: 2px solid white;
+
+    p {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 25px;
+      color: white;
+      margin: 10px 20px 0px 10px;
+    }
+  }
+  .total-title {
+    margin: 0px 10px 0px 10px;
+    border-bottom: 2px solid white;
+    p {
+      margin-top: 14px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 25px;
+      color: white;
+      margin: 0px 10px 0px 10px;
+    }
+  }
+  .bici-button {
+    padding: 10px 15px;
+  }
+}
+
+
+.active {
+  .urgence-image {
+    background-image: asset-url("commande/time-pink.svg") !important;
+  }
+  .bike-1-image {
+    background-image: asset-url("commande/bike-pink.svg") !important;
+  }
+  .bike-2-image {
+    background-image: asset-url("commande/cargo-pink.svg") !important;
+  }
+}
+
+
+
+
+
+
+
+
 
 
