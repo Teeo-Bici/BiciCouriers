@@ -18,7 +18,6 @@ gem 'webpacker'
 
 gem "mail_form"
 gem 'geocoder'
-gem 'google_maps_service', '~> 0.3.0'
 
 
 
