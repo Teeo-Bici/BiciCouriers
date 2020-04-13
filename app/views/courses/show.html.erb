@@ -1,23 +1,15 @@
 <div class="course-main-container">
-<%= simple_form_for @course do |f| %>
-
-
-
-
-<div class="first-conatiner">
-  <div class="rammassage">
-    <%= f.fields_for :pickups do |pickup| %>
-        <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
-        <%= pickup.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
-        <%= pickup.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur le ramassage ?', class: 'inline-form' %>
-    <% end %>
-  </div>
-  <div class="livraison">
-    <%= f.fields_for :drops do |drop| %>
-        <%= drop.text_field :address, label: false, :required => true, :placeholder => 'Adresse de livraison', class: 'inline-form address-input' %>
-        <%= drop.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
-        <%= drop.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur la livraison ?', class: 'inline-form' %>
-    <% end %>
+  <div class="first-container">
+    <div class="rammassage">
+    <p> <%= @course.pickups.first.address %> </p>
+    <p> <%= @course.pickups.first.date %></p>
+    <p> <%= @course.pickups.first.details %></p>
+    </div>
+    <div class="livraison">
+    <p> <%= @course.drops.first.address %></p>
+    <p> <%= @course.drops.first.date %></p>
+    <p> <%= @course.drops.first.details %></p>
+    </div>
   </div>
 </div>
 <div class="second-container">
@@ -77,16 +69,3 @@
 </div>
 <% end %>
 </div>
-
-
-
-<!-- t.bigint "carnet_id"
-t.bigint "bike_id"
-t.integer "ticket_nb"
-t.integer "distance"
-t.string "details"
-t.datetime "created_at", null: false
-t.datetime "updated_at", null: false
-t.string "status"
-t.integer "price"
-t.integer "urgence" -->

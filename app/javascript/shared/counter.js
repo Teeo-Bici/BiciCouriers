@@ -7,6 +7,8 @@ const counter = () => {
   const sum = volumeTickets + urgenceTickets + distanceTickets
   const totalDiv = document.getElementById('total-t');
   totalDiv.innerHTML = sum
+  const ticketsFormInput = document.querySelector('.tickets-input');
+  ticketsFormInput.value = sum;
 }
 
 export { counter }

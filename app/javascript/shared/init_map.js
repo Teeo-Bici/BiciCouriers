@@ -37,6 +37,8 @@ const initMap =() => {
           const distanceDiv = document.getElementById('distance-t');
           distanceDiv.innerHTML = distanceTickets
           counter();
+          const distanceFormInput = document.querySelector('.distance-input');
+          distanceFormInput.value = distance;
        }
     });
   });

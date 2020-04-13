@@ -1,6 +1,10 @@
 class CoursesController < ApplicationController
   layout "commandes"
 
+  def show
+    @course = Course.find(params[:id])
+  end
+
   def index
     @courses = Course.all
   end
@@ -18,9 +22,9 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    # raise
     if @course.save
       redirect_to courses_path
+    # raise
     else
       render :new
     end
@@ -29,8 +33,7 @@ class CoursesController < ApplicationController
 private
 
   def course_params
-        params.require(:course).permit(:id, :ticket_nb, :distance, :details, :status, :price, :urgence, :bike_id, :user_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
+        params.require(:course).permit(:id, :ticket_nb, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, :user_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
   end
 
 end
-

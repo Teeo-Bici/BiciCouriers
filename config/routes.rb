@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
 
-  resources :courses, only: [:new, :create, :index] do
+  resources :courses, only: [:new, :create, :index, :show] do
     resources :drops, only: [ :new, :create ]
     resources :pickup, only: [ :new, :create ]
   end

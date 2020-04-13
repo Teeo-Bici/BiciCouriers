@@ -133,6 +133,12 @@ bike_1 = Bike.create(
   }
 )
 
+bike_2 = Bike.create(
+  {
+    max_weight: 80000,
+    max_size: 2000000
+  }
+)
 
 course_1 = Course.create(
   {

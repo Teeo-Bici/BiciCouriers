@@ -24,7 +24,7 @@
   margin: 0px auto;
 
   display: grid;
-  grid-template-columns: 10% 30% 30% 10% 10% 10%;
+  grid-template-columns: 10% 20% 10% 20% 7.5% 10% 7.5% 5% 10%;
   grid-template-rows: auto;
   .title > p {
     font-family: Montserrat;
@@ -32,6 +32,9 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
+  }
+  .center {
+    text-align: center;
   }
 
   p {
@@ -41,6 +44,9 @@
     font-size: 12px;
     line-height: 15px;
     color: white;
+  }
+  .bici-button {
+    padding: 7px 12px;
   }
 }
 

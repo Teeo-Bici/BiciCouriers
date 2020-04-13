@@ -2,21 +2,28 @@
   <div class="course-in-progress">
     <h1>Mes commandes en livraison</h1>
     <div class="index-courses index-titles">
-      <div class="index-title title"> <p>date</p> </div>
-      <div class="index-title title"> <p>Point de ramassage</p> </div>
-      <div class="index-title title"> <p>Point de livraison</p> </div>
-      <div class="index-title title"> <p>Statut</p> </div>
-      <div class="index-title title"> <p>Prix</p> </div>
-      <div class="index-title title"> <p>Ticket(s)</p> </div>
+      <div class="index-title title center">  <p>Date</p>                 </div>
+      <div class="index-title title">         <p>Point de ramassage</p>   </div>
+      <div class="index-title title center">  <p>Date</p>                 </div>
+      <div class="index-title title">         <p>Point de livraison</p>   </div>
+      <div class="index-title title center">  <p>Statut</p>               </div>
+      <div class="index-title title center">  <p>Distance</p>             </div>
+      <div class="index-title title">         <p>Prix</p>                 </div>
+      <div class="index-title title center">  <p>Ticket(s)</p>            </div>
+      <div class="index-title title center">                              </div>
     </div>
     <div class="index-courses index-contents">
       <% @courses.each do |course|  %>
-        <div class="index-content"> <p> <%= course.pickups.first.date %> </p> </div>
+        <div class="index-content center"> <p> <%= course.pickups.first.date %> </p> </div>
         <div class="index-content"> <p> <%= course.pickups.first.address %> </p> </div>
+        <div class="index-content center"> <p> <%= course.drops.first.date %> </p> </div>
         <div class="index-content"> <p> <%= course.drops.first.address %> </p> </div>
-        <div class="index-content"> <p> <%= course.status %> </p> </div>
-        <div class="index-content"> <p> <%= course.price %> </p> </div>
-        <div class="index-content"> <p> <%= course.ticket_nb %> </p> </div>
+        <div class="index-content center"> <p> <%= course.status%> </p> </div>
+        <div class="index-content center"> <p> <%= course.distance/1000.to_f%> km</p> </div>
+        <div class="index-content"> <p> <%= course.ticket_nb > 0 ? ((course.carnet.ticket_price.to_f * course.ticket_nb)/100) : 0 %> H.T</p> </div>
+        <div class="index-content center"> <p> <%= course.ticket_nb %> </p> </div>
+        <div class="index-content center"> <%= link_to "détails", course_path(course), class: "bici-button" %></div>
+
       <% end %>
     </div>
   </div>
