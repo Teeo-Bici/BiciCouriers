@@ -65,9 +65,9 @@
       <%= f.association :user, default: current_user, class: "hidden user-input" %>
       <%= f.association :carnet, default: current_user.carnets.last, class: "hidden" %>
       <%= f.input_field :distance, class: "hidden distance-input" %>
-      <%= f.input_field :tickets_urgence, class: "hidden distance-input" %>
-      <%= f.input_field :tickets_volume, class: "hidden distance-input" %>
-      <%= f.input_field :tickets_distance, class: "hidden distance-input" %>
+      <%= f.input_field :tickets_urgence, class: "hhidden tickets-urgence" %>
+      <%= f.input_field :tickets_volume, class: "hhidden tickets-volume" %>
+      <%= f.input_field :tickets_distance, class: "hhidden tickets-distance" %>
       <%= f.input_field :ticket_nb, class: "hhidden tickets-input" %>
       <%= f.input_field :status, value: "pending", class: "hhidden" %>
 

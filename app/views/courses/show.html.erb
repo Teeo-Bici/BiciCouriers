@@ -20,9 +20,9 @@
     </div>
     <div class="price-container">
       <div class="total-title price-line"><p>Prestation</p><div class="euro-image"></div><div class="ticket-image"></div> </div>
-      <div class="sous-total total-urgence price-line"><p>Urgence</p><p id="urgence-t">0</p></div>
-      <div class="sous-total total-distance price-line"><p>Distance</p><p id="distance-t">0</p></div>
-      <div class="sous-total total-cargo price-line"><p>Volume/poid</p><p id="cargo-t">0</p></div>
+      <div class="sous-total total-urgence price-line"><p>Urgence</p><p id="urgence-t"><%= @course.tickets_urgence %></p></div>
+      <div class="sous-total total-distance price-line"><p>Distance</p><p id="distance-t"><%= @course.tickets_distance %></p></div>
+      <div class="sous-total total-cargo price-line"><p>Volume/poid</p><p id="cargo-t"><%= @course.tickets_volume %></p></div>
       <div class="total total-ticket price-line"><p>Total</p><p id="total-t"> <%= @course.ticket_nb %></p></div>
     </div>
   </div>
