@@ -1,10 +1,7 @@
 <div class="course-main-container">
 <%= simple_form_for @course do |f| %>
 
-
-
-
-<div class="first-conatiner">
+<div class="first-container">
   <div class="rammassage">
     <%= f.fields_for :pickups do |pickup| %>
         <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
@@ -68,6 +65,9 @@
       <%= f.association :user, default: current_user, class: "hidden user-input" %>
       <%= f.association :carnet, default: current_user.carnets.last, class: "hidden" %>
       <%= f.input_field :distance, class: "hidden distance-input" %>
+      <%= f.input_field :tickets_urgence, class: "hidden distance-input" %>
+      <%= f.input_field :tickets_volume, class: "hidden distance-input" %>
+      <%= f.input_field :tickets_distance, class: "hidden distance-input" %>
       <%= f.input_field :ticket_nb, class: "hhidden tickets-input" %>
       <%= f.input_field :status, value: "pending", class: "hhidden" %>
 

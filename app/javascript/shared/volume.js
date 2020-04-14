@@ -4,7 +4,9 @@ let volumeTickets = 0
 const bikeToggle = () => {
   const bike1 = document.querySelector('.bike-1');
   const bike2 = document.querySelector('.bike-2');
-
+  if (bike2 === null) {
+    return
+  }
 
 
   const resetBike = () => {

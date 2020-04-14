@@ -1,71 +1,29 @@
-<div class="course-main-container">
+<div class="course-show-container">
   <div class="first-container">
     <div class="rammassage">
-    <p> <%= @course.pickups.first.address %> </p>
-    <p> <%= @course.pickups.first.date %></p>
-    <p> <%= @course.pickups.first.details %></p>
+      <h1>Ramassage</h1>
+      <p id="rec-address-pickup"> <%= @course.pickups.first.address %> </p>
+      <p> <%= @course.pickups.first.date %></p>
+      <p> <%= @course.pickups.first.details %></p>
     </div>
     <div class="livraison">
-    <p> <%= @course.drops.first.address %></p>
-    <p> <%= @course.drops.first.date %></p>
-    <p> <%= @course.drops.first.details %></p>
+      <h1>Livraison</h1>
+      <p id="rec-address-drop"> <%= @course.drops.first.address %></p>
+      <p> <%= @course.drops.first.date %></p>
+      <p> <%= @course.drops.first.details %></p>
     </div>
   </div>
-</div>
-<div class="second-container">
-  <div
-  id="map-container"
-  data-google-api-key="<%= ENV['GOOGLE_API_KEY'] %>">
-  </div>
-  <div class="options-container">
-    <div class="urgences-container">
-      <div class="urgence-1 urgence active">
-        <div class="urgence-image"></div>
-        <p>Livré dans la journée</p>
-      </div>
-      <div class="urgence-2 urgence">
-        <div class="urgence-image"></div>
-        <p>Livré dans les 4 prochaines heures</p>
-      </div>
-      <div class="urgence-3 urgence">
-        <div class="urgence-image"></div>
-        <p>Livré dans les 45 minutes</p>
-      </div>
-      <div class="urgence-4 urgence">
-        <div class="urgence-image"></div>
-        <p>Personnaliser les heures</p>
-      </div>
+  <div class="second-container">
+    <div
+      id="show-map-container"
+      data-google-api-key="<%= ENV['GOOGLE_API_KEY'] %>">
     </div>
-
-    <div class="bikes-container">
-      <div class="bike-1 bike active">
-        <div class="bike-1-image"></div>
-        <p>Sac à dos</p>
-      </div>
-      <div class="bike-2 bike">
-        <div class="bike-2-image"></div>
-        <p>Vélo cargo</p>
-      </div>
-      <%= f.association :bike, as: :radio_buttons, checked: :first, wrapper_html: { style: "display: none" }, class: "hidden" %>
-    </div>
-
-    <div class="total-container">
+    <div class="price-container">
       <div class="total-title price-line"><p>Prestation</p><div class="euro-image"></div><div class="ticket-image"></div> </div>
       <div class="sous-total total-urgence price-line"><p>Urgence</p><p id="urgence-t">0</p></div>
       <div class="sous-total total-distance price-line"><p>Distance</p><p id="distance-t">0</p></div>
       <div class="sous-total total-cargo price-line"><p>Volume/poid</p><p id="cargo-t">0</p></div>
-      <div class="total total-ticket price-line"><p>Total</p><p id="total-t">0</p></div>
-
-
-      <%= f.association :user, default: current_user, class: "hidden user-input" %>
-      <%= f.association :carnet, default: current_user.carnets.last, class: "hidden" %>
-      <%= f.input_field :distance, class: "hidden distance-input" %>
-      <%= f.input_field :ticket_nb, class: "hhidden tickets-input" %>
-      <%= f.input_field :status, value: "pending", class: "hhidden" %>
-
-      <%= f.submit "Commander", class: "bici-button" %>
+      <div class="total total-ticket price-line"><p>Total</p><p id="total-t"> <%= @course.ticket_nb %></p></div>
     </div>
   </div>
-</div>
-<% end %>
 </div>

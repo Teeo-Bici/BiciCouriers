@@ -7,7 +7,9 @@ const urgenceToggle = () => {
   const urgence2 = document.querySelector('.urgence-2');
   const urgence3 = document.querySelector('.urgence-3');
   const urgence4 = document.querySelector('.urgence-4');
-
+  if (urgence4 === null) {
+    return
+  }
 
   const resetUrgence = () => {
   const urgences = document.querySelectorAll('.urgence');
