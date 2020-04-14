@@ -1,10 +1,13 @@
 import  { counter } from '../shared/counter.js';
 
 let distanceTickets = 0
-const initMap =() => {
+const initMap = () => {
 
   const pickupInput = document.getElementById('course_pickups_attributes_0_address');
   const dropInput = document.getElementById('course_drops_attributes_0_address');
+  if (dropInput === null) {
+    return
+  }
 
 
   const directionsService = new google.maps.DirectionsService();
@@ -18,6 +21,9 @@ const initMap =() => {
   }
 
   const map = new google.maps.Map(document.getElementById("map-container"), myOptions);
+  if (map === null) {
+    return
+  }
   directionsDisplay.setMap(map);
 
   dropInput.addEventListener("change", (event) => {
@@ -44,27 +50,5 @@ const initMap =() => {
   });
 }
 
+
 export { initMap, distanceTickets };
-
-
-
-
-
-
-
-
-
-
-   // // The location of Uluru
-   // const nantes = {lat: 47.2173, lng: -1.5534};
-   // // The map, centered at Uluru
-   // const map = new google.maps.Map(
-   //     document.getElementById('map-container'), {zoom: 13, center: nantes});
-   // // The marker, positioned at Uluru
-   // const marker = new google.maps.Marker({position: nantes, map: map});
-
-   // const pickupInput = document.getElementById('course_pickups_attributes_0_address');
-
-   // pickupInput.addEventListener("input", (event) => {
-   //   const marker = new google.maps.Marker({position: pickup, map: map});
-   // });

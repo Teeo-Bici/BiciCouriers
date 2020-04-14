@@ -20,10 +20,10 @@ const getRoutes = () => {
 
     const pickupInput = document.getElementById('course_pickups_attributes_0_address');
     pickupInput.addEventListener("input", (event) => {
-      const pickupAddress =event.originalTarget.value;
+      const pickupAddress = event.originalTarget.value;
       getPickupAddress(pickupAddress);
     });
 
   }
 
-export { getRoutes };
+export { getRoutes }

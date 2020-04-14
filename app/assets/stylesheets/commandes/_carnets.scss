@@ -1,10 +1,9 @@
-.course-main-container {
+.carnet-main-container {
   // background-color: red;
   width: 80vw;
-  // height: 3000px;
+  height: 3000px;
   margin-top: 100px;
-
-  .course-in-progress {
+  .carnet-in-progress {
     h1 {
       font-family: Montserrat;
       font-style: normal;
@@ -15,14 +14,12 @@
       margin-left: 7.5%;
     }
   }
-
-  .index-courses {
+  .index-carnets {
     width: 85%;
     margin: 0px auto;
     display: grid;
-    grid-template-columns: 10% 20% 10% 20% 7.5% 10% 7.5% 5% 10%;
+    grid-template-columns: 10% 10% 10% 10% 60%;
     grid-template-rows: auto;
-
     .title > p {
       font-family: Montserrat;
       font-style: normal;
@@ -30,11 +27,9 @@
       font-size: 14px;
       line-height: 17px;
     }
-
     .center {
       text-align: center;
     }
-
     .right {
       text-align: right;
     }
@@ -47,7 +42,6 @@
       line-height: 15px;
       color: white;
     }
-
     .bici-button {
       padding: 7px 12px;
     }

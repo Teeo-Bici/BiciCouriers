@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
   resources :courses, only: [:new, :create, :index, :show] do
     resources :drops, only: [ :new, :create ]
-    resources :pickup, only: [ :new, :create ]
+    resources :pickups, only: [ :new, :create ]
   end
+  resources :carnets, only: [:new, :create, :index, :show]
 
 end

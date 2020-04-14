@@ -6,7 +6,8 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all
+    @courses = Course.where(:user_id == current_user.id)
+    # raise
   end
 
   def new
@@ -33,7 +34,7 @@ class CoursesController < ApplicationController
 private
 
   def course_params
-        params.require(:course).permit(:id, :ticket_nb, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, :user_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
+        params.require(:course).permit(:id, :ticket_nb, :tickets_volume, :tickets_urgence, :tickets_distance, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, :user_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
   end
 
 end

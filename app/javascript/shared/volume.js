@@ -4,7 +4,9 @@ let volumeTickets = 0
 const bikeToggle = () => {
   const bike1 = document.querySelector('.bike-1');
   const bike2 = document.querySelector('.bike-2');
-
+  if (bike2 === null) {
+    return
+  }
 
 
   const resetBike = () => {
@@ -20,9 +22,9 @@ const bikeToggle = () => {
     const cargoDiv = document.getElementById('cargo-t');
     cargoDiv.innerHTML = 0
     volumeTickets = 0
-    counter();
     const velo = document.querySelectorAll('.form-check');
     velo[0].firstChild.checked = true;
+    counter();
   });
 
   bike2.addEventListener('click', (event) => {
@@ -31,9 +33,9 @@ const bikeToggle = () => {
     const cargoDiv = document.getElementById('cargo-t');
     cargoDiv.innerHTML = 1
     volumeTickets = 1
-    counter();
     const cargo = document.querySelectorAll('.form-check');
     cargo[1].firstChild.checked = true;
+    counter();
   });
 }
 
