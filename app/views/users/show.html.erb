@@ -1,0 +1,40 @@
+<div class="user-main-container">
+  <div class="first-container">
+    <div class="first-left">
+      <h2>Mes informations</h2>
+      <p><span class="title"> Société :</span> <%=            current_user.company        %></p>
+      <p><span class="title"> Prénom :</span> <%=             current_user.first_name     %></p>
+      <p><span class="title"> Nom :</span> <%=                current_user.last_name      %></p>
+      <p><span class="title"> Adresse :</span> <%=            current_user.address        %></p>
+      <p><span class="title"> Email :</span> <%=              current_user.email          %></p>
+      <p><span class="title"> Téléphone :</span> <%=          current_user.phone          %></p>
+      <p><span class="title"> Facture par email :</span> <%=  current_user.paper_invoice ? "Oui" : "Non"  %></p>
+      <p><span class="title"> Mots de passe :</span> *******</p>
+      <%= link_to "Modifier", edit_user_registration_path, class: "bici-button" %>
+    </div>
+
+
+    <div class="first-right">
+      <h2>Adresse de facturation</h2>
+      <p><span class="title"> Société :</span> <%=  current_user.company          %></p>
+      <p><span class="title"> Adresse :</span> <%=  current_user.billing_address  %></p>
+      <%= link_to "Modifier", edit_user_registration_path, class: "bici-button"   %>
+    </div>
+  </div>
+
+
+  <div class="second-container">
+    <div class="second-left">
+      <h2>Mes parrainages</h2>
+      <p><span class="title">Vous n’avez pas encore de parrainages.</span></p>
+      <%= link_to "Ajouter des fillots !", edit_user_registration_path, class: "bici-button"   %>
+
+    </div>
+    <div class="second-right">
+      <h2>Mes adresses</h2>
+      <p><span class="title"> Boite :</span> <%=  current_user.address          %></p>
+      <%= link_to "Ajouter une adresse", edit_user_registration_path, class: "bici-button"   %>
+    </div>
+  </div>
+</div>
+

@@ -1,4 +1,12 @@
 Rails.application.configure do
+  config.to_prepare do
+      Devise::SessionsController.layout "commandes"
+      Devise::RegistrationsController.layout "commandes"
+      Devise::ConfirmationsController.layout "commandes"
+      Devise::UnlocksController.layout "commandes"
+      Devise::PasswordsController.layout "commandes"
+  end
+
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   # Settings specified here will take precedence over those in config/application.rb.
 
