@@ -878,7 +878,7 @@
     npm-run-all "^4.1.5"
     rebound "^0.1.0"
 
-"@rails/webpacker@^5.0.1":
+"@rails/webpacker@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-5.0.1.tgz#f7bdb8d0b36e41aa2f219aad332f50194ad4fc46"
   integrity sha512-r74Od+YO5OxkrePNLL9M3Mi3DQNPLSXkv+cGDdiFvTGeFc+VtI8j0sNGoulBMlEZFH8GVlb7LLy/FVLjPJq1/Q==
