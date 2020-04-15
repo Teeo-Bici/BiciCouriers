@@ -1,10 +1,13 @@
 Rails.application.configure do
   config.to_prepare do
-      Devise::SessionsController.layout "commandes"
-      Devise::RegistrationsController.layout "commandes"
-      Devise::ConfirmationsController.layout "commandes"
-      Devise::UnlocksController.layout "commandes"
-      Devise::PasswordsController.layout "commandes"
+      Devise::SessionsController.layout "application"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "commandes" : "application" }
+      Devise::ConfirmationsController.layout "application"
+      Devise::UnlocksController.layout "application"
+      Devise::PasswordsController.layout "application"
+      UsersController.layout "commandes"
+      CoursesController.layout "commandes"
+      CarnetsController.layout "commandes"
   end
 
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
@@ -18,7 +21,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  # Show full error reports.
+  # Show full error reports.s
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.

@@ -122,7 +122,8 @@ carnet_50 = Carnet.create(
   {
     user_id: florent.id,
     ticket_nb: 100,
-    ticket_price: 420
+    ticket_price: 420,
+    remaining_tickets: 100
   }
 )
 

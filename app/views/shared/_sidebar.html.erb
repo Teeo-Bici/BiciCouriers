@@ -1,16 +1,20 @@
 <div class="main-side-nav">
 
   <div class="user-infos">
+   <%# if current_user %>
     <p id="name"> <%= current_user.first_name%> <strong> <%=current_user.last_name %></strong></p>
     <p id="company"> <%= current_user.company %> </p>
     <p id="email"> <%= current_user.email %> </p>
     <p id="phone"> <%= current_user.phone %> </p>
+    <%# end %>
   </div>
   <div class="button-list">
     <ul>
       <li> <%= link_to "Mes informations", profil_path  %> </li>
       <li> <%= link_to "Mes commandes", courses_path  %></li>
       <li> <%= link_to "Mes carnets", carnets_path  %></li>
+      <br>
+      <%= link_to "Nouvelle course", new_course_path, class: "bici-button" %>
     </ul>
   </div>
   <div class="side-oeuf-1">

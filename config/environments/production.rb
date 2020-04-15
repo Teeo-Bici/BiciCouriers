@@ -1,4 +1,15 @@
 Rails.application.configure do
+  config.to_prepare do
+      Devise::SessionsController.layout "application"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "commandes" : "application" }
+      Devise::ConfirmationsController.layout "application"
+      Devise::UnlocksController.layout "application"
+      Devise::PasswordsController.layout "application"
+      UsersController.layout "commandes"
+      CoursesController.layout "commandes"
+      CarnetsController.layout "commandes"
+  end
+
   config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Settings specified here will take precedence over those in config/application.rb.
 

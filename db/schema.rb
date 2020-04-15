@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_093247) do
+ActiveRecord::Schema.define(version: 2020_04_15_153720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_093247) do
     t.string "ticket_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "remaining_tickets"
     t.index ["user_id"], name: "index_carnets_on_user_id"
   end
 

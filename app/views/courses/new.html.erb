@@ -51,7 +51,7 @@
         <div class="bike-2-image"></div>
         <p>Vélo cargo</p>
       </div>
-      <%= f.association :bike, as: :radio_buttons, checked: :first, wrapper_html: { style: "display: none" }, class: "hidden" %>
+      <%= f.association :bike, as: :radio_buttons, checked: :first, wrapper_html: { style: "display: nonne" }, class: "hhidden" %>
     </div>
 
     <div class="total-container">
@@ -62,13 +62,14 @@
       <div class="total total-ticket price-line"><p>Total</p><p id="total-t">0</p></div>
 
 
-      <%= f.association :user, default: current_user, class: "hidden user-input" %>
-      <%= f.association :carnet, default: current_user.carnets.last, class: "hidden" %>
-      <%= f.input_field :distance, class: "hidden distance-input" %>
-      <%= f.input_field :tickets_urgence, class: "hhidden tickets-urgence" %>
-      <%= f.input_field :tickets_volume, class: "hhidden tickets-volume" %>
-      <%= f.input_field :tickets_distance, class: "hhidden tickets-distance" %>
-      <%= f.input_field :ticket_nb, class: "hhidden tickets-input" %>
+      <%= f.association :user, default: current_user, class: "hhidden user-input" %>
+      <%= current_user.id %>
+      <%= f.association :carnet, default: current_user.carnets.last, class: "hhidden" %>
+      <%= f.input_field :distance, hint: "distance", class: "hhidden distance-input" %>
+      <%= f.input_field :tickets_urgence, hint: "ticket urgence", class: "hhidden tickets-urgence" %>
+      <%= f.input_field :tickets_volume, hint: "ticket volume", class: "hhidden tickets-volume" %>
+      <%= f.input_field :tickets_distance, hint: "ticket distance", class: "hhidden tickets-distance" %>
+      <%= f.input_field :ticket_nb, hint: "ticket total", class: "hhidden tickets-input" %>
       <%= f.input_field :status, value: "pending", class: "hhidden" %>
 
       <%= f.submit "Commander", class: "bici-button" %>

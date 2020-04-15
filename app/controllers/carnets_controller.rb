@@ -1,5 +1,5 @@
 class CarnetsController < ApplicationController
-  layout "commandes"
+
 
   def index
     @carnets = Carnet.all

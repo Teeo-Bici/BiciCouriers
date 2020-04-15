@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     private
 
     def layout_by_resource
-      if devise_controller? && resource_name == :user && action_name == "edit"
+      if (devise_controller? && resource_name == :user && action_name == "edit")
         "commandes"
       else
         "application"

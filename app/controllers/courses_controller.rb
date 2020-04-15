@@ -1,16 +1,11 @@
 class CoursesController < ApplicationController
-  layout "commandes"
 
   def show
     @course = Course.find(params[:id])
   end
 
   def index
-    @courses = []
-    Course.all.map do |course|
-      course.user_id == current_user.id ? @courses << course : course
-    end
-    # raise
+    @courses = Course.all
   end
 
   def new
@@ -25,11 +20,15 @@ class CoursesController < ApplicationController
   end
 
   def create
+    @carnet = current_user.carnets.last
     @course = Course.new(course_params)
     if @course.save
+      # raise
+      add_course_to_carnet(@carnet, @course)
+      @carnet.save
       redirect_to courses_path
-    # raise
     else
+    # raise
       render :new
     end
   end
@@ -40,4 +39,7 @@ private
         params.require(:course).permit(:id, :ticket_nb, :tickets_volume, :tickets_urgence, :tickets_distance, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, :user_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
   end
 
+  def add_course_to_carnet(carnet, course)
+    carnet.remaining_tickets = (carnet.remaining_tickets - course.ticket_nb)
+  end
 end
