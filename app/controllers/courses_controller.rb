@@ -6,7 +6,10 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.where(:user_id == current_user.id)
+    @courses = []
+    Course.all.map do |course|
+      course.user_id == current_user.id ? @courses << course : course
+    end
     # raise
   end
 

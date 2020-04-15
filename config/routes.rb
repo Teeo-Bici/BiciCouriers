@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  match 'users/show', to: 'users#show', via: 'get'
+  match 'profil', to: 'users#show', via: 'get'
 
   root to: 'pages#home'
   get "/histoire", to: "pages#story"
@@ -21,6 +21,6 @@ Rails.application.routes.draw do
     resources :drops, only: [ :new, :create ]
     resources :pickups, only: [ :new, :create ]
   end
-  resources :carnets, only: [:new, :create, :index, :show]
 
+  resources :carnets, only: [:new, :create, :index, :show]
 end
