@@ -1,5 +1,6 @@
 import "bootstrap";
 
+
 import  { movement } from '../shared/services.js';
 import  { cardsFly } from '../shared/avantages.js';
 import  { userLogo } from '../shared/navbar.js';
@@ -11,6 +12,7 @@ import  { initShowMap } from '../shared/init_show.js';
 
 
 
+
 movement();
 cardsFly();
 userLogo();
@@ -19,4 +21,5 @@ initAutocomplete();
 urgenceToggle();
 bikeToggle();
 initShowMap();
+
 
