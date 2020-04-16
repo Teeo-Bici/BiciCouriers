@@ -1,6 +1,7 @@
 import  { counter } from '../shared/counter.js';
 
 let urgenceTickets = 0
+let urgenceRange = 11
 const urgenceToggle = () => {
 
   const urgence1 = document.querySelector('.urgence-1');
@@ -24,6 +25,7 @@ const urgenceToggle = () => {
     const urgenceDiv = document.getElementById('urgence-t');
     urgenceDiv.innerHTML = 0
     urgenceTickets = 0
+    urgenceRange = 11
     counter();
   });
 
@@ -33,6 +35,7 @@ const urgenceToggle = () => {
     const urgenceDiv = document.getElementById('urgence-t');
     urgenceDiv.innerHTML = 1
     urgenceTickets = 1
+    urgenceRange = 4
     counter();
   });
 
@@ -42,6 +45,7 @@ const urgenceToggle = () => {
     const urgenceDiv = document.getElementById('urgence-t');
     urgenceDiv.innerHTML = 2
     urgenceTickets = 2
+    urgenceRange = 0.75
     counter();
   });
 
@@ -55,4 +59,4 @@ const urgenceToggle = () => {
   });
 }
 
-export { urgenceToggle, urgenceTickets };
+export { urgenceToggle, urgenceTickets, urgenceRange };

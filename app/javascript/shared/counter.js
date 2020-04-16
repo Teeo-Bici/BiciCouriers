@@ -3,7 +3,7 @@ import  { urgenceToggle, urgenceTickets } from '../shared/urgence.js';
 import  { bikeToggle, volumeTickets } from '../shared/volume.js';
 
 const counter = () => {
-  console.log(volumeTickets);
+  // console.log(volumeTickets);
   const sum = volumeTickets + urgenceTickets + distanceTickets
   const totalDiv = document.getElementById('total-t');
   totalDiv.innerHTML = sum

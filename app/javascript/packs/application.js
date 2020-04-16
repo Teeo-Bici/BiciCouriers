@@ -1,4 +1,6 @@
 import "bootstrap";
+import noUiSlider from 'nouislider';
+import 'nouislider/distribute/nouislider.css';
 
 
 import  { movement } from '../shared/services.js';
@@ -9,6 +11,8 @@ import  { initAutocomplete } from '../shared/init_autocomplete.js';
 import  { urgenceToggle } from '../shared/urgence.js';
 import  { bikeToggle } from '../shared/volume.js';
 import  { initShowMap } from '../shared/init_show.js';
+import  { slider } from '../shared/slider.js';
+
 
 
 
@@ -21,5 +25,5 @@ initAutocomplete();
 urgenceToggle();
 bikeToggle();
 initShowMap();
-
+slider();
 
