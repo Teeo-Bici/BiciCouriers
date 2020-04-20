@@ -6,7 +6,9 @@ const counter = () => {
   // console.log(volumeTickets);
   const sum = volumeTickets + urgenceTickets + distanceTickets
   const totalDiv = document.getElementById('total-t');
+  const totalDivPrice = document.getElementById('total-e');
   totalDiv.innerHTML = sum
+  totalDivPrice.innerHTML = `${sum * 7}.00€`
   const ticketsFormInput = document.querySelector('.tickets-input');
   const ticketsUrgenceInput = document.querySelector('.tickets-urgence');
   const ticketsVolumeInput = document.querySelector('.tickets-volume');

@@ -20,7 +20,9 @@ const bikeToggle = () => {
     resetBike();
     bike1.classList.add('active');
     const cargoDiv = document.getElementById('cargo-t');
+    const cargoDivPrice = document.getElementById('cargo-e');
     cargoDiv.innerHTML = 0
+    cargoDivPrice.innerHTML = 0
     volumeTickets = 0
     const velo = document.querySelectorAll('.form-check');
     velo[0].firstChild.checked = true;
@@ -31,7 +33,9 @@ const bikeToggle = () => {
     resetBike();
     bike2.classList.add('active');
     const cargoDiv = document.getElementById('cargo-t');
+    const cargoDivPrice = document.getElementById('cargo-e');
     cargoDiv.innerHTML = 1
+    cargoDivPrice.innerHTML = `${1 * 7}.00€`
     volumeTickets = 1
     const cargo = document.querySelectorAll('.form-check');
     cargo[1].firstChild.checked = true;

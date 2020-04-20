@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(<%= asset_path('404-velo.png') %>);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: white;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
@@ -54,14 +57,10 @@
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="rails-default-error-page">
+
   </div>
 </body>
 </html>
