@@ -8,6 +8,7 @@ const urgenceToggle = () => {
   const urgence2 = document.querySelector('.urgence-2');
   const urgence3 = document.querySelector('.urgence-3');
   const urgence4 = document.querySelector('.urgence-4');
+  const basePrice = 7
   if (urgence4 === null) {
     return
   }
@@ -33,7 +34,9 @@ const urgenceToggle = () => {
     resetUrgence();
     urgence2.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
+    const urgenceDivPrice = document.getElementById('urgence-e');
     urgenceDiv.innerHTML = 1
+    urgenceDivPrice.innerHTML = 1 * basePrice
     urgenceTickets = 1
     urgenceRange = 4
     counter();
@@ -43,7 +46,9 @@ const urgenceToggle = () => {
     resetUrgence();
     urgence3.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
+    const urgenceDivPrice = document.getElementById('urgence-e');
     urgenceDiv.innerHTML = 2
+    urgenceDivPrice.innerHTML = 2 * basePrice
     urgenceTickets = 2
     urgenceRange = 0.75
     counter();
@@ -53,8 +58,10 @@ const urgenceToggle = () => {
     resetUrgence();
     urgence4.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
-    urgenceDiv.innerHTML = 3
-    urgenceTickets = 3
+    const urgenceDivPrice = document.getElementById('urgence-e');
+    urgenceDiv.innerHTML = 2
+    urgenceDivPrice.innerHTML = 2 * basePrice
+    urgenceTickets = 2
     counter();
   });
 }

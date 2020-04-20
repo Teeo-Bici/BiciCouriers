@@ -15,7 +15,9 @@
   color: $blue !important;
 }
 
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
 .commande-body {
   display: flex;

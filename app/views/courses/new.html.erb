@@ -7,7 +7,7 @@
         <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
         <%= pickup.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
         <%= pickup.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur le ramassage ?', class: 'inline-form' %>
-        <div class="slider-container"><div id="slider-pickup"></div><span id="slider-pickup-value" class="hidden"></span></div>
+        <div class="slider-container hidden-trans"><div id="slider-pickup"></div><span id="slider-pickup-value" class="hidden"></span></div>
     <% end %>
   </div>
   <div class="livraison">
@@ -15,6 +15,7 @@
         <%= drop.text_field :address, label: false, :required => true, :placeholder => 'Adresse de livraison', class: 'inline-form address-input' %>
         <%= drop.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
         <%= drop.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur la livraison ?', class: 'inline-form' %>
+        <div class="slider-container hidden-trans"><div id="slider-drop"></div><span id="slider-drop-value" class="hidden"></span></div>
     <% end %>
   </div>
 </div>
@@ -24,54 +25,63 @@
   data-google-api-key="<%= ENV['GOOGLE_API_KEY'] %>">
   </div>
   <div class="options-container">
-    <div class="urgences-container">
-      <div class="urgence-1 urgence active">
-        <div class="urgence-image"></div>
-        <p>Livré dans la journée</p>
-      </div>
-      <div class="urgence-2 urgence">
-        <div class="urgence-image"></div>
-        <p>Livré dans les 4 prochaines heures</p>
-      </div>
-      <div class="urgence-3 urgence">
-        <div class="urgence-image"></div>
-        <p>Livré dans les 45 minutes</p>
-      </div>
-      <div class="urgence-4 urgence">
-        <div class="urgence-image"></div>
-        <p>Personnaliser les heures</p>
-      </div>
+
+
+    <div class="urgences-container dropdown-options">
+      <div class="button-second urgence-options"><p>C'est urgent ? </p><i class="fas fa-caret-down"></i></div>
+      <div class="options">
+        <div class="urgence-1 urgence active">
+          <div class="urgence-image"></div>
+          <p>Aujourd'hui</p>
+        </div>
+        <div class="urgence-2 urgence">
+          <div class="urgence-image"></div>
+          <p>Avant <span id='4heures'>XX:XX</span></p>
+        </div>
+        <div class="urgence-3 urgence">
+          <div class="urgence-image"></div>
+          <p>Avant <span id='45min'>XX:XX</span></p>
+        </div>
+        <div class="urgence-4 urgence">
+          <div class="urgence-image"></div>
+          <p>Sur mesure</p>
+        </div>
+       </div>
     </div>
 
-    <div class="bikes-container">
-      <div class="bike-1 bike active">
-        <div class="bike-1-image"></div>
-        <p>Sac à dos</p>
+
+    <div class="bikes-container dropdown-options">
+      <div class="bike-options button-second"><p>C'est volumineux ? </p><i class="fas fa-caret-down"></i></div>
+      <div class="options">
+        <div class="bike-1 bike active">
+          <div class="bike-1-image"></div>
+          <p>Sac à dos</p>
+        </div>
+        <div class="bike-2 bike">
+          <div class="bike-2-image"></div>
+          <p>Vélo cargo</p>
+        </div>
       </div>
-      <div class="bike-2 bike">
-        <div class="bike-2-image"></div>
-        <p>Vélo cargo</p>
-      </div>
-      <%= f.association :bike, as: :radio_buttons, checked: :first, wrapper_html: { style: "display: nonne" }, class: "hhidden" %>
+
+      <%= f.association :bike, as: :radio_buttons, checked: :first, wrapper_html: { style: "display: none" }, class: "hhidden" %>
     </div>
 
     <div class="total-container">
-      <div class="total-title price-line"><p>Prestation</p><div class="euro-image"></div><div class="ticket-image"></div> </div>
-      <div class="sous-total total-urgence price-line"><p>Urgence</p><p id="urgence-t">0</p></div>
-      <div class="sous-total total-distance price-line"><p>Distance</p><p id="distance-t">0</p></div>
-      <div class="sous-total total-cargo price-line"><p>Volume/poid</p><p id="cargo-t">0</p></div>
-      <div class="total total-ticket price-line"><p>Total</p><p id="total-t">0</p></div>
+      <div class="total-title price-line">                <div class="column1"><p>Prestation</p></div>   <div class="column2 euro-image"></div>              <div class="column3 ticket-image"></div>                      </div>
+      <div class="sous-total total-urgence price-line">   <div class="column1"><p>Urgence</p></div>      <div class="column2"><p id="urgence-e">0</p></div>  <div class="column3"><p id="urgence-t">0</p></div>            </div>
+      <div class="sous-total total-distance price-line">  <div class="column1"><p>Distance</p></div>     <div class="column2"><p id="distance-e">0</p></div> <div class="column3"><p id="distance-t">0</p></div>           </div>
+      <div class="sous-total total-cargo price-line">     <div class="column1"><p>Volume/poids</p></div> <div class="column2"><p id="cargo-e">0</p></div>    <div class="column3"><p id="cargo-t">0</p></div>              </div>
+      <div class="total total-ticket price-line">         <div class="column1"><p>Total</p></div>        <div class="column2"><p id="total-e">0</p></div>    <div class="column3"><p id="total-t">0</p></div>              </div>
 
 
-      <%= f.association :user, default: current_user, class: "hhidden user-input" %>
-      <%= current_user.id %>
-      <%= f.association :carnet, default: current_user.carnets.last, class: "hhidden" %>
-      <%= f.input_field :distance, hint: "distance", class: "hhidden distance-input" %>
-      <%= f.input_field :tickets_urgence, hint: "ticket urgence", class: "hhidden tickets-urgence" %>
-      <%= f.input_field :tickets_volume, hint: "ticket volume", class: "hhidden tickets-volume" %>
-      <%= f.input_field :tickets_distance, hint: "ticket distance", class: "hhidden tickets-distance" %>
-      <%= f.input_field :ticket_nb, hint: "ticket total", class: "hhidden tickets-input" %>
-      <%= f.input_field :status, value: "pending", class: "hhidden" %>
+      <%= f.association :user, default: current_user, wrapper_html: { style: "display: none" }, class: "hidden user-input" %>
+      <%= f.association :carnet, default: current_user.carnets.last, wrapper_html: { style: "display: none" }, class: "hidden" %>
+      <%= f.input_field :distance, hint: "distance", class: "hidden distance-input" %>
+      <%= f.input_field :tickets_urgence, hint: "ticket urgence", class: "hidden tickets-urgence" %>
+      <%= f.input_field :tickets_volume, hint: "ticket volume", class: "hidden tickets-volume" %>
+      <%= f.input_field :tickets_distance, hint: "ticket distance", class: "hidden tickets-distance" %>
+      <%= f.input_field :ticket_nb, hint: "ticket total", class: "hidden tickets-input" %>
+      <%= f.input_field :status, value: "pending", class: "hidden" %>
 
       <%= f.submit "Commander", class: "bici-button" %>
     </div>
@@ -80,15 +90,3 @@
 <% end %>
 </div>
 
-
-
-<!-- t.bigint "carnet_id"
-t.bigint "bike_id"
-t.integer "ticket_nb"
-t.integer "distance"
-t.string "details"
-t.datetime "created_at", null: false
-t.datetime "updated_at", null: false
-t.string "status"
-t.integer "price"
-t.integer "urgence" -->

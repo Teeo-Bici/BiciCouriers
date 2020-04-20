@@ -3,14 +3,21 @@ import 'nouislider/distribute/nouislider.css';
 import  { urgenceRange } from '../shared/urgence.js';
 
 const slider = () => {
-  const slider = document.getElementById('slider-pickup');
-  const sliderValue = document.getElementById('slider-pickup-value');
-  const origins = slider.getElementsByClassName('noUi-origin');
+  const sliderPickup = document.getElementById('slider-pickup');
+  const sliderDrop = document.getElementById('slider-drop');
+  const sliders = document.querySelectorAll('.slider-container');
+
+  const sliderValuePickup = document.getElementById('slider-pickup-value');
+  const sliderValueDrop = document.getElementById('slider-drop-value');
+  const originsPickup = sliderPickup.getElementsByClassName('noUi-origin');
+  const originsDrop = sliderDrop.getElementsByClassName('noUi-origin');
   const urgence1 = document.querySelector('.urgence-1');
   const urgence2 = document.querySelector('.urgence-2');
   const urgence3 = document.querySelector('.urgence-3');
   const urgence4 = document.querySelector('.urgence-4');
   const urgences = document.querySelectorAll('.urgence');
+  const Qminutes = document.getElementById('45min');
+  const Qheures = document.getElementById('4heures');
 
 
   Number.prototype.toHHMMSS = function () {
@@ -42,6 +49,8 @@ const slider = () => {
   const start = 8
   const end = 19
 
+  Qminutes.innerText = (hm + 0.75).toHHMMSS();
+  Qheures.innerText = (hm + 4).toHHMMSS();
 
 
 
@@ -56,9 +65,7 @@ const slider = () => {
       }
   }
 
-
-
-  noUiSlider.create(slider, {
+  noUiSlider.create(sliderPickup, {
     format: {
             to: function (value) {
                 return value.toHHMMSS();
@@ -79,22 +86,51 @@ const slider = () => {
       }
   });
 
-  slider.noUiSlider.on('update', (values, handle) => {
-      sliderValue.innerHTML = values[handle];
+  noUiSlider.create(sliderDrop, {
+    format: {
+            to: function (value) {
+                return value.toHHMMSS();
+            },
+            from: function (value) {
+                return value;
+            }
+        },
+      start: [now, now + 2],
+      connect: true,
+      margin: urgenceRange,
+      padding: [now-8, 0],
+      step: 0.25,
+      tooltips: [true, true],
+      range: {
+          'min': start,
+          'max': end
+      }
+  });
+
+  sliderPickup.noUiSlider.on('update', (values, handle) => {
+      sliderValuePickup.innerHTML = values[handle];
   });
 
   urgences.forEach((urgence) => {
     urgence.addEventListener('click', function () {
       console.log(urgenceRange)
-      slider.noUiSlider.updateOptions({
+      sliderPickup.noUiSlider.updateOptions({
           margin: urgenceRange,
       });
-      slider.noUiSlider.reset()
+      sliderDrop.noUiSlider.updateOptions({
+          margin: urgenceRange,
+      });
+      sliderPickup.noUiSlider.reset()
+      sliderDrop.noUiSlider.reset()
     });
   })
 
+ urgence4.addEventListener('click', () => {
+  sliders.forEach((slider) => {
+    slider.classList.toggle('hidden-trans');
+  });
+ });
+
 }
-
-
 
 export { slider }
