@@ -41,7 +41,9 @@ const initMap = () => {
           distanceTickets = Math.ceil(distance / 3500)
           console.log(distanceTickets);
           const distanceDiv = document.getElementById('distance-t');
+          const distanceDivPrice = document.getElementById('distance-e');
           distanceDiv.innerHTML = distanceTickets
+          distanceDivPrice.innerHTML = `${distanceTickets * 7}.00 €`
           counter();
           const distanceFormInput = document.querySelector('.distance-input');
           distanceFormInput.value = distance;
