@@ -1,0 +1,16 @@
+<div class="course-main-container">
+
+	<div class="first-container">
+    <%= simple_form_for @carnet do |f| %>
+    <%= f.association :carnet_template, collection: CarnetTemplate.all, as: :radio_buttons, boolean_style: :inline %>
+    <%= f.submit "Acheter", class: "bici-button" %>
+    <% end %>
+	</div>
+	<div class="second-container">
+		<div class="left-container">
+		</div>
+		<div class="right-container">
+		</div>
+	</div>
+</div>
+

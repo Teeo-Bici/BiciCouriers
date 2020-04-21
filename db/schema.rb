@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_153720) do
+ActiveRecord::Schema.define(version: 2020_04_21_163720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,13 +29,20 @@ ActiveRecord::Schema.define(version: 2020_04_15_153720) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "carnet_templates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "ticket_nb"
+    t.integer "ticket_price"
+  end
+
   create_table "carnets", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "ticket_nb"
-    t.string "ticket_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "remaining_tickets"
+    t.bigint "carnet_template_id"
+    t.index ["carnet_template_id"], name: "index_carnets_on_carnet_template_id"
     t.index ["user_id"], name: "index_carnets_on_user_id"
   end
 
@@ -109,10 +116,13 @@ ActiveRecord::Schema.define(version: 2020_04_15_153720) do
     t.string "address"
     t.string "billing_address"
     t.boolean "paper_invoice"
+    t.boolean "admin", default: false
+    t.integer "pool", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "carnets", "carnet_templates"
   add_foreign_key "carnets", "users"
   add_foreign_key "courses", "bikes"
   add_foreign_key "courses", "carnets"

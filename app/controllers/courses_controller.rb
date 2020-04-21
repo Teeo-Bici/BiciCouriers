@@ -6,7 +6,12 @@ class CoursesController < ApplicationController
   end
 
   def index
-    # @courses = Course.where(user: current_user)
+
+    @pending = policy_scope(Course).where(status: 'pending')
+    @inprogress = policy_scope(Course).where(status: 'inprogress')
+    @accepted = policy_scope(Course).where(status: 'accepted')
+    @done = policy_scope(Course).where(status: 'done')
+
     @courses = policy_scope(Course).order(created_at: :desc)
   end
 
@@ -18,21 +23,24 @@ class CoursesController < ApplicationController
     authorize pickup
 
 
-    @drop = Drop.geocoded
-
-    @drop_marker = [lat: @drop.first.latitude, lng: @drop.first.longitude]
+    # @drop = Drop.geocoded
+    # @drop_marker = [lat: @drop.first.latitude, lng: @drop.first.longitude]
 
   end
 
   def create
     @course = Course.new(course_params)
-    @carnet = current_user.carnets.last
-    @course.user = current_user
+    @user = current_user
+    @carnet = @user.carnets.last
+    @course.user = @user
+    @course.carnet = @user.carnets.last
     authorize @course
     if @course.save
       # raise
-      add_course_to_carnet(@carnet, @course)
+      add_course_to_carnet(@carnet, @course, @user)
+      # raise
       @carnet.save
+      @user.save
       redirect_to courses_path
     else
     # raise
@@ -43,10 +51,21 @@ class CoursesController < ApplicationController
 private
 
   def course_params
-        params.require(:course).permit(:id, :ticket_nb, :tickets_volume, :tickets_urgence, :tickets_distance, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
+        params.require(:course).permit(:ticket_nb, :tickets_volume, :tickets_urgence, :tickets_distance, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
   end
 
-  def add_course_to_carnet(carnet, course)
-    carnet.remaining_tickets = (carnet.remaining_tickets - course.ticket_nb)
+  def add_course_to_carnet(carnet, course, user)
+    if carnet.remaining_tickets <= 0
+       user.pool = user.pool + carnet.remaining_tickets
+       carnet.remaining_tickets = 0
+      flash[:notice] = "Attention, vous n'avez plus de ticket dans votre carnet !"
+    else
+      carnet.remaining_tickets = (carnet.remaining_tickets - course.ticket_nb)
+      if carnet.remaining_tickets <= 0
+       user.pool = user.pool + carnet.remaining_tickets
+       carnet.remaining_tickets = 0
+      flash[:notice] = "Attention, vous n'avez plus de ticket dans votre carnet !"
+      end
+    end
   end
 end

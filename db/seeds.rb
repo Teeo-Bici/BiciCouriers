@@ -14,22 +14,23 @@ Drop.destroy_all
 Course.destroy_all
 Carnet.destroy_all
 User.destroy_all
+CarnetTemplate.destroy_all
 
 Service.create(
   {
     title: "Transport urgent",
     content: "Vous avez une demande express ? Vous souhaitez faire livrer une lettre ou un colis pendant les heures de pointes ? La livraison express  par coursiers à vélos sur Nantes est la plus rapide ! Nos coursiers pratique le cyclisme sportif et mettent leur efficacité à votre service en livrant votre colis 45 minutes seulement après votre demande.",
-    images: "services/relai_poste.png",
+    images: "services/transport_urgent_nantes.svg",
     details: "La légendaire tournée du facteur est trop tardive ? Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose. Plus besoin de courir à la poste avant qu’elle ferme !"
   }
 )
 
 Service.create(
   {
-    title: "Ship from store",
+    title: "Equilibre des stocks",
     content: "Facilitez la logistique de vos produits entre vos différents magasins ! Un coursier enlève la marchandise d’un magasin A vers un magasin B ou directement chez votre client, notamment lors des périodes de soldes où les stocks s’écoulent rapidement. Un avantage logistique qui n’est pas dépendant du trafic automobile de la ville.",
-    images: "services/relai_poste.png",
-    details: "La légendaire tournée du facteur est trop tardive ? Bici Couriers répond à votre demande en toute simplicité. Choisissez une heure de dépôt et de retrait du courrier et laissez vous du temps pour faire autre chose. Plus besoin de courir à la poste avant qu’elle ferme !"
+    images: "services/gestion_stock_nantes.svg",
+    details: "Facilitez la logistique de vos produits entre vos différents magasins ! Un coursier enlève la marchandise d’un magasin A vers un magasin B ou directement chez votre client, notamment lors des périodes de soldes où les stocks s’écoulent rapidement. Un avantage logistique qui n’est pas dépendant du trafic automobile de la ville."
   }
 )
 
@@ -118,12 +119,42 @@ florent = User.create(
   }
 )
 
-carnet_50 = Carnet.create(
+admin = User.create(
   {
-    user_id: florent.id,
+    email: "bicicouriersnantes@gmail.com",
+    password: "secret",
+    phone: "0781116670",
+    first_name: "Florent",
+    last_name: "Guilbaud",
+    company: "BiciCouriers",
+    admin: true
+  }
+)
+carnet_50_t = CarnetTemplate.create(
+  {
+    ticket_nb: 50,
+    ticket_price: 440
+  }
+)
+
+carnet_100_t = CarnetTemplate.create(
+  {
     ticket_nb: 100,
-    ticket_price: 420,
-    remaining_tickets: 100
+    ticket_price: 420
+  }
+)
+
+carnet_20_t = CarnetTemplate.create(
+  {
+    ticket_nb: 20,
+    ticket_price: 480
+  }
+)
+
+carnet_10_t = CarnetTemplate.create(
+  {
+    ticket_nb: 10,
+    ticket_price: 500
   }
 )
 
@@ -138,6 +169,14 @@ bike_2 = Bike.create(
   {
     max_weight: 80000,
     max_size: 2000000
+  }
+)
+
+carnet_50 = Carnet.create(
+  {
+    carnet_template_id: carnet_50_t.id,
+    user_id: florent.id,
+    remaining_tickets: 50
   }
 )
 
@@ -205,14 +244,129 @@ Drop.create(
   }
 )
 
-
-
-
-
-
-
-
-
-
+course_3 = Course.create(
+  {
+  user_id: florent.id,
+  carnet_id: carnet_50.id,
+  bike_id: bike_1.id,
+  ticket_nb: 2,
+  distance: 2341,
+  details: "Ouech alors",
+  status: "accepted"
+  }
+)
+Pickup.create(
+  {
+  course_id: course_3.id,
+  address: "21 rue Amirale Du chaffault, 44100, Nantes",
+  start_hour: "12:00",
+  end_hour: "16:00",
+  details: "",
+  date: "21/03/2020"
+  }
+)
+Drop.create(
+  {
+  course_id: course_3.id,
+  address: "9 Impasse des Tilleuls",
+  start_hour: "14:00",
+  end_hour: "18:00",
+  details: "Chez un avocat",
+  date: "21/03/2020"
+  }
+)
+course_4 = Course.create(
+  {
+  user_id: florent.id,
+  carnet_id: carnet_50.id,
+  bike_id: bike_1.id,
+  ticket_nb: 2,
+  distance: 2341,
+  details: "Ouech alors",
+  status: "inprogress"
+  }
+)
+Pickup.create(
+  {
+  course_id: course_4.id,
+  address: "21 rue Amirale Du chaffault, 44100, Nantes",
+  start_hour: "12:00",
+  end_hour: "16:00",
+  details: "",
+  date: "21/03/2020"
+  }
+)
+Drop.create(
+  {
+  course_id: course_4.id,
+  address: "9 Impasse des Tilleuls",
+  start_hour: "14:00",
+  end_hour: "18:00",
+  details: "Chez un avocat",
+  date: "21/03/2020"
+  }
+)
+course_5 = Course.create(
+  {
+  user_id: florent.id,
+  carnet_id: carnet_50.id,
+  bike_id: bike_1.id,
+  ticket_nb: 2,
+  distance: 2341,
+  details: "Ouech alors",
+  status: "done"
+  }
+)
+Pickup.create(
+  {
+  course_id: course_5.id,
+  address: "21 rue Amirale Du chaffault, 44100, Nantes",
+  start_hour: "12:00",
+  end_hour: "16:00",
+  details: "",
+  date: "21/03/2020"
+  }
+)
+Drop.create(
+  {
+  course_id: course_5.id,
+  address: "9 Impasse des Tilleuls",
+  start_hour: "14:00",
+  end_hour: "18:00",
+  details: "Chez un avocat",
+  date: "21/03/2020"
+  }
+)
+course_6 = Course.create(
+  {
+  user_id: florent.id,
+  carnet_id: carnet_50.id,
+  bike_id: bike_1.id,
+  ticket_nb: 2,
+  distance: 2341,
+  details: "Ouech alors",
+  status: "inprogress"
+  }
+)
+Pickup.create(
+  {
+  course_id: course_6.id,
+  address: "21 rue Amirale Du chaffault, 44100, Nantes",
+  start_hour: "12:00",
+  end_hour: "16:00",
+  details: "",
+  date: "21/03/2020"
+  }
+)
+Drop.create(
+  {
+  course_id: course_6.id,
+  address: "9 Impasse des Tilleuls",
+  start_hour: "14:00",
+  end_hour: "18:00",
+  details: "Chez un avocat",
+  date: "21/03/2020"
+  }
+)
 
 puts "ok"

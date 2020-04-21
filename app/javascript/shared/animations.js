@@ -1,6 +1,9 @@
 const animations = () => {
 
 const urgencePlus = document.querySelector('.urgence-options')
+if (urgencePlus === null) {
+  return
+}
 const urgenceContainer = document.querySelector('.urgences-container')
 const volumePlus = document.querySelector('.bike-options')
 const volumeContainer = document.querySelector('.bikes-container')

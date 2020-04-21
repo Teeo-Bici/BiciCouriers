@@ -1,0 +1,4 @@
+const ticketsCounter =() => {
+
+}
+export { ticketsCounter }

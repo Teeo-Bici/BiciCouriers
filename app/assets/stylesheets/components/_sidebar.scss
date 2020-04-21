@@ -1,19 +1,18 @@
 .main-side-nav {
   // background-color:pink;
-  width: 20vw;
+  width: 270px;
   height: 100vh;
   // position: fixed;
 
 
   position: -webkit-sticky;
   position: sticky;
-  top: 100px;
+  top: 0px;
 
 
-  margin-top: 100px;
+  padding-top: 100px;
   border-right: 2px white solid;
   padding-left: 40px;
-
   .user-infos {
     margin-left: 20px;
     #name {
@@ -80,4 +79,31 @@
     bottom: 0px;
     left:0px;
   }
+  .ticket-counter {
+    width: 160px !important;
+    height: 160px !important;
+    // background-color: red;
+    position: absolute;
+    bottom: 100px;
+    left:55px;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

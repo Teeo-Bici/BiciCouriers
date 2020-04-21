@@ -4,6 +4,9 @@ import  { urgenceRange } from '../shared/urgence.js';
 
 const slider = () => {
   const sliderPickup = document.getElementById('slider-pickup');
+  if (sliderPickup === null) {
+    return
+  }
   const sliderDrop = document.getElementById('slider-drop');
   const sliders = document.querySelectorAll('.slider-container');
 
@@ -47,7 +50,7 @@ const slider = () => {
   // VARIABLES
   const now = round(hm);
   const start = 8
-  const end = 19
+  const end = 22
 
   Qminutes.innerText = (hm + 0.75).toHHMMSS();
   Qheures.innerText = (hm + 4).toHHMMSS();

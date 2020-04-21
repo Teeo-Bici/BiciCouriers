@@ -19,7 +19,7 @@
         <div class="index-content"> <p> <%= course.drops.first.address %> </p> </div>
         <div class="index-content center"> <p> <%= course.status%> </p> </div>
         <div class="index-content center"> <p> <%= course.distance/1000.to_f%> km</p> </div>
-        <div class="index-content"> <p> <%= course.ticket_nb > 0 ? ((course.carnet.ticket_price.to_f * course.ticket_nb)/100) : 0 %> H.T</p> </div>
+        <div class="index-content"> <p> <%= course.ticket_nb > 0 ? ((course.carnet.carnet_template.ticket_price.to_f * course.ticket_nb)/100) : 0 %> H.T</p> </div>
         <div class="index-content center"> <p> <%= course.ticket_nb %> </p> </div>
       <% end %>
     </div>

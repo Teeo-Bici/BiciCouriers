@@ -20,7 +20,27 @@ Rails.application.routes.draw do
   resources :courses, only: [:new, :create, :index, :show] do
     resources :drops, only: [ :new, :create ]
     resources :pickups, only: [ :new, :create ]
+    collection do
+      get :pending
+    end
+    collection do
+      get :accepted
+    end
+    collection do
+      get :inprogress
+    end
+    collection do
+      get :dropped
+    end
   end
 
-  resources :carnets, only: [:new, :create, :index, :show]
+  resources :carnets, only: [:new, :create, :index, :show] do
+    collection do
+      get :inprogress
+    end
+    collection do
+      get :finished
+    end
+  end
+
 end

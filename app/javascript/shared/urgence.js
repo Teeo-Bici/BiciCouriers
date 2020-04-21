@@ -25,6 +25,8 @@ const urgenceToggle = () => {
     urgence1.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
     const urgenceDivPrice = document.getElementById('urgence-e');
+    const urgenceLinePrice = document.querySelector('.total-urgence');
+    urgenceLinePrice.classList.add('hidden');
     urgenceDiv.innerHTML = 0
     urgenceDivPrice.innerHTML = 'inclu'
     urgenceTickets = 0
@@ -37,6 +39,8 @@ const urgenceToggle = () => {
     urgence2.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
     const urgenceDivPrice = document.getElementById('urgence-e');
+    const urgenceLinePrice = document.querySelector('.total-urgence');
+    urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 1
     urgenceDivPrice.innerHTML = `${basePrice * 1}.00 €`
     urgenceTickets = 1
@@ -49,6 +53,8 @@ const urgenceToggle = () => {
     urgence3.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
     const urgenceDivPrice = document.getElementById('urgence-e');
+    const urgenceLinePrice = document.querySelector('.total-urgence');
+    urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 2
     urgenceDivPrice.innerHTML = `${basePrice * 2}.00 €`
     urgenceTickets = 2
@@ -61,6 +67,13 @@ const urgenceToggle = () => {
     urgence4.classList.add('active');
     const urgenceDiv = document.getElementById('urgence-t');
     const urgenceDivPrice = document.getElementById('urgence-e');
+    const urgenceLinePrice = document.querySelector('.total-urgence');
+
+    // const bar1 = document.getElementById('myItem1').ldBar;
+    // bar1.set(60);
+
+
+    urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 2
     urgenceDivPrice.innerHTML = `${basePrice * 2}.00 €`
     urgenceTickets = 2

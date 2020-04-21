@@ -20,12 +20,13 @@
   </div>
 </div>
 <div class="second-container">
+
   <div
   id="map-container"
   data-google-api-key="<%= ENV['GOOGLE_API_KEY'] %>">
   </div>
-  <div class="options-container">
 
+  <div class="options-container">
 
     <div class="urgences-container dropdown-options">
       <div class="button-second urgence-options"><p>C'est urgent ?</p><i class="fas fa-caret-down"></i></div>
@@ -49,7 +50,6 @@
        </div>
     </div>
 
-
     <div class="bikes-container dropdown-options">
       <div class="bike-options button-second"><p>C'est volumineux ?</p><i class="fas fa-caret-down"></i></div>
       <div class="options">
@@ -68,14 +68,14 @@
 
     <div class="total-container">
       <div class="total-title price-line">                <div class="column1"><p>Prestation</p></div>   <div class="column2 euro-image"></div>              <div class="column3 ticket-image"></div>                      </div>
-      <div class="sous-total total-urgence price-line">   <div class="column1"><p>Urgence</p></div>      <div class="column2"><p id="urgence-e">inclu</p></div>  <div class="column3"><p id="urgence-t">0</p></div>            </div>
       <div class="sous-total total-distance price-line">  <div class="column1"><p>Distance</p></div>     <div class="column2"><p id="distance-e"></p></div> <div class="column3"><p id="distance-t">0</p></div>           </div>
-      <div class="sous-total total-cargo price-line">     <div class="column1"><p>Volume/poids</p></div> <div class="column2"><p id="cargo-e">inclu</p></div>    <div class="column3"><p id="cargo-t">0</p></div>              </div>
+      <div class="sous-total total-urgence price-line hidden">   <div class="column1"><p>Urgence</p></div>      <div class="column2"><p id="urgence-e">inclu</p></div>  <div class="column3"><p id="urgence-t">0</p></div>            </div>
+      <div class="sous-total total-cargo price-line hidden">     <div class="column1"><p>Volume/poids</p></div> <div class="column2"><p id="cargo-e">inclu</p></div>    <div class="column3"><p id="cargo-t">0</p></div>              </div>
       <div class="total total-ticket price-line">         <div class="column1"><p>Total</p></div>        <div class="column2"><p id="total-e">0.00 €</p></div>    <div class="column3"><p id="total-t">0</p></div>              </div>
 
 
       <%#= f.association :user, default: current_user, wrapper_html: { style: "display: none" }, class: "hidden user-input" %>
-      <%= f.association :carnet, default: current_user.carnets.last, wrapper_html: { style: "display: none" }, class: "hidden" %>
+      <%#= f.association :carnet, default: current_user.carnets.last, wrapper_html: { style: "display: none" }, class: "hidden" %>
       <%= f.input_field :distance, hint: "distance", class: "hidden distance-input" %>
       <%= f.input_field :tickets_urgence, hint: "ticket urgence", class: "hidden tickets-urgence" %>
       <%= f.input_field :tickets_volume, hint: "ticket volume", class: "hidden tickets-volume" %>
@@ -85,6 +85,7 @@
 
       <%= f.submit "Commander", class: "bici-button" %>
     </div>
+
   </div>
 </div>
 <% end %>

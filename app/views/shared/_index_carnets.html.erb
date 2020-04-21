@@ -1,0 +1,9 @@
+<div class="index-carnets index-contents">
+  <% carnets.each do |carnet|  %>
+    <div class="index-content center"> <p> <%= carnet.created_at.strftime("%d %B %y") %> </p> </div>
+    <div class="index-content center"> <p> <%= carnet.carnet_template.ticket_nb %> </p> </div>
+    <div class="index-content center"> <p> <%= carnet.remaining_tickets  %> </p> </div>
+    <div class="index-content center"> <p> <%= (carnet.carnet_template.ticket_nb.to_i * carnet.carnet_template.ticket_price.to_i)/100 %> H.T </p> </div>
+    <div class="index-content right"> <%= link_to "détails", carnet_path(carnet), class: "bici-button" %></div>
+  <% end %>
+</div>

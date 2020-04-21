@@ -21,6 +21,8 @@ const bikeToggle = () => {
     bike1.classList.add('active');
     const cargoDiv = document.getElementById('cargo-t');
     const cargoDivPrice = document.getElementById('cargo-e');
+    const urgenceLinePrice = document.querySelector('.total-cargo');
+    urgenceLinePrice.classList.add('hidden');
     cargoDiv.innerHTML = 0
     cargoDivPrice.innerHTML = 0
     volumeTickets = 0
@@ -34,6 +36,8 @@ const bikeToggle = () => {
     bike2.classList.add('active');
     const cargoDiv = document.getElementById('cargo-t');
     const cargoDivPrice = document.getElementById('cargo-e');
+    const urgenceLinePrice = document.querySelector('.total-cargo');
+    urgenceLinePrice.classList.remove('hidden');
     cargoDiv.innerHTML = 1
     cargoDivPrice.innerHTML = `${1 * 7}.00€`
     volumeTickets = 1

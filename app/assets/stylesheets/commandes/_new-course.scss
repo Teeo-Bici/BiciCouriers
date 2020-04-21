@@ -75,9 +75,9 @@
 }
 
 #map-container {
-  margin-top: 20px;
+  margin: 20px 0px 20px 0px;
   width: 45%;
-  height: 500px;
+  // height: 500px;
   border-radius: 15px;
   background: #153A7E;
   box-shadow:  7px -7px 14px #143776,
@@ -200,9 +200,11 @@
   box-shadow:  7px -7px 14px #143776,
                -7px 7px 14px #143776;
   padding: 15px;
+  .hidden {
+    display: none !important;
+  }
   .column1 {
     width: 40%;
-
   }
   .column2 {
     width: 30%;
@@ -303,7 +305,7 @@
   display: flex;
   justify-content: space-between;
   color: white;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 24px;
   transition: 0.4s;
   padding-bottom: 20px;
