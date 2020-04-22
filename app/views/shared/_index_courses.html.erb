@@ -17,7 +17,7 @@
   				Livrée
   			<% end %></p></div>
   		<div class="index-content right"> <p> <%= course.distance.nil? ? 0 : course.distance/1000.to_f %>km</p> </div>
-  		<div class="index-content"> <p> <%= course.ticket_nb.nil? ? 0 : (course.ticket_nb > 0 ? humanized_money_with_symbol((course.carnet.carnet_template.price_cents * course.ticket_nb)) : 0) %></p> </div>
+  		<div class="index-content"> <p> <%= course.ticket_nb.nil? ? 0 : (course.ticket_nb > 0 ? course.carnet.carnet_template.price_cents * course.ticket_nb : 0) %></p> </div>
   		<div class="index-content center"> <p> <%= course.ticket_nb %> </p> </div>
   		<div class="index-content right"> <%= link_to "détails", course_path(course), class: "bici-button" %></div>
   	<% end %>
