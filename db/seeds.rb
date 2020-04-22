@@ -130,31 +130,40 @@ admin = User.create(
     admin: true
   }
 )
-carnet_50_t = CarnetTemplate.create(
-  {
-    ticket_nb: 50,
-    ticket_price: 440
-  }
-)
 
-carnet_100_t = CarnetTemplate.create(
+carnet_10_t = CarnetTemplate.create(
   {
-    ticket_nb: 100,
-    ticket_price: 420
+    ticket_nb: 10,
+    price_cents: 500,
+    description: "Carnet de 10 tickets pour les petits besoins ponctuels.",
+    image: "tarifs/ticket-1.svg"
   }
 )
 
 carnet_20_t = CarnetTemplate.create(
   {
     ticket_nb: 20,
-    ticket_price: 480
+    price_cents: 480,
+    description: "20 tickets pour une utilisation un peu plus régulière.",
+    image: "tarifs/ticket-1.svg"
   }
 )
 
-carnet_10_t = CarnetTemplate.create(
+carnet_50_t = CarnetTemplate.create(
   {
-    ticket_nb: 10,
-    ticket_price: 500
+    ticket_nb: 50,
+    price_cents: 440,
+    description: "Carnet de 50 tickets destinés à des besoins quotidiens !",
+    image: "tarifs/ticket-1.svg"
+  }
+)
+
+carnet_100_t = CarnetTemplate.create(
+  {
+    ticket_nb: 100,
+    price_cents: 420,
+    description: "Carnet de 100 tickets destinés à de gros besoin et économiser sur vos livraisons !",
+    image: "tarifs/ticket-1.svg"
   }
 )
 

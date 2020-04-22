@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
 
   def index
 
-    @pending = policy_scope(Course).where(status: 'pending')
+    @pending = policy_scope(Course).where(status: 'pending').order(created_at: :desc)
     @inprogress = policy_scope(Course).where(status: 'inprogress')
     @accepted = policy_scope(Course).where(status: 'accepted')
     @done = policy_scope(Course).where(status: 'done')
@@ -18,10 +18,10 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
     drop = @course.drops.build
-    @bikes = Bike.all
     pickup = @course.pickups.build
     authorize drop
     authorize pickup
+    @carnet = current_user.carnets.where('remaining_tickets > ?', 0).first
 
 
     # @drop = Drop.geocoded
@@ -31,10 +31,9 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.bike_id = Bike.first.id if @course.bike_id == nil
-    @bikes = Bike.all
+    @course.bike_id = Bike.first.id if @course.bike_id.nil?
     @user = current_user
-    @carnet = @user.carnets.last
+    @carnet = @user.carnets.where('remaining_tickets > ?', 0).first
     @course.user = @user
     @course.carnet = @user.carnets.last
     authorize @course

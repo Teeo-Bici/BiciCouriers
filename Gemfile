@@ -19,6 +19,7 @@ gem 'webpacker'
 gem "mail_form"
 gem 'geocoder'
 gem 'pundit'
+gem 'money-rails'
 
 
 

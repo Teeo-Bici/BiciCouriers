@@ -6,7 +6,7 @@
     <%= f.fields_for :pickups do |pickup| %>
         <%= pickup.text_field :address, value: current_user.address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
         <%= pickup.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
-        <%= pickup.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur le ramassage ?', class: 'inline-form' %>
+        <%= pickup.text_area :details, :as => :text, :placeholder => "Rendez un coursier heureux, donnez un max d'infos pour le ramassage !", class: 'inline-form' %>
         <div class="slider-container hidden-trans"><div id="slider-pickup"></div><span id="slider-pickup-value" class="hidden"></span></div>
     <% end %>
   </div>
@@ -14,7 +14,7 @@
     <%= f.fields_for :drops do |drop| %>
         <%= drop.text_field :address, label: false, :required => true, :placeholder => 'Adresse de livraison', class: 'inline-form address-input' %>
         <%= drop.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
-        <%= drop.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur la livraison ?', class: 'inline-form' %>
+        <%= drop.text_area :details, :as => :text, :placeholder => "Le rendre doublement plus heureux ? C'est ici !", class: 'inline-form' %>
         <div class="slider-container hidden-trans"><div id="slider-drop"></div><span id="slider-drop-value" class="hidden"></span></div>
     <% end %>
   </div>
@@ -66,12 +66,13 @@
       <%= f.input :bike, as: :radio_buttons, wrapper_html: { style: "display: none" } %>
     </div>
 
-    <div class="total-container">
+    <div class="total-container"
+          data-carnet-price='<%= @carnet.carnet_template.price_cents %>'>
       <div class="total-title price-line">                <div class="column1"><p>Prestation</p></div>   <div class="column2 euro-image"></div>              <div class="column3 ticket-image"></div>                      </div>
       <div class="sous-total total-distance price-line">  <div class="column1"><p>Distance</p></div>     <div class="column2"><p id="distance-e"></p></div> <div class="column3"><p id="distance-t">0</p></div>           </div>
       <div class="sous-total total-urgence price-line hidden">   <div class="column1"><p>Urgence</p></div>      <div class="column2"><p id="urgence-e">inclu</p></div>  <div class="column3"><p id="urgence-t">0</p></div>            </div>
       <div class="sous-total total-cargo price-line hidden">     <div class="column1"><p>Volume/poids</p></div> <div class="column2"><p id="cargo-e">inclu</p></div>    <div class="column3"><p id="cargo-t">0</p></div>              </div>
-      <div class="total total-ticket price-line">         <div class="column1"><p>Total</p></div>        <div class="column2"><p id="total-e">0.00 €</p></div>    <div class="column3"><p id="total-t">0</p></div>              </div>
+      <div class="total total-ticket price-line">         <div class="column1"><p>Total</p></div>        <div class="column2"><p id="total-e">0.00</p></div>    <div class="column3"><p id="total-t">0</p></div>              </div>
 
 
       <%#= f.association :user, default: current_user, wrapper_html: { style: "display: none" }, class: "hidden user-input" %>

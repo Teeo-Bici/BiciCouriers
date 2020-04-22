@@ -1,9 +1,25 @@
-<div class="course-main-container">
+<div class="new-carnet-main-container">
 
 	<div class="first-container">
     <%= simple_form_for @carnet do |f| %>
-    <%= f.association :carnet_template, collection: CarnetTemplate.all, as: :radio_buttons, boolean_style: :inline %>
-    <%= f.submit "Acheter", class: "bici-button" %>
+    <%= f.association :carnet_template, collection: CarnetTemplate.all, as: :radio_buttons, boolean_style: :inline, wrapper_html: { style: "display: none" } %>
+    <div class="carnets-container">
+      <% @carnet_templates.each_with_index do |carnet_template, idx| %>
+        <div class="carnet-card" data-id="<%= idx %>">
+          <div class="content">
+            <p class="description"> <%= carnet_template.description %> </p>
+            <p class="counter"> <%= carnet_template.ticket_nb %> tickets</p>
+            <%= image_tag carnet_template.image %>
+          </div>
+          <%= f.submit "Acheter", class: "bici-button" %>
+
+
+        </div>
+      <% end %>
+    </div>
+
+
+
     <% end %>
 	</div>
 	<div class="second-container">

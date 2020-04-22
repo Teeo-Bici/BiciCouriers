@@ -13,7 +13,8 @@ import  { bikeToggle } from '../shared/volume.js';
 import  { initShowMap } from '../shared/init_show.js';
 import  { slider } from '../shared/slider.js';
 import  { animations } from '../shared/animations.js';
-import  { counterCircle } from '../shared/loading-bar.js';
+import  { counterCircle } from '../shared/loading_bar.js';
+import  { selectCarnet } from '../shared/select_carnet.js';
 
 
 
@@ -30,4 +31,5 @@ initShowMap();
 slider();
 animations();
 counterCircle();
+selectCarnet();
 

@@ -1,4 +1,4 @@
-import  { counter } from '../shared/counter.js';
+import  { counter, price } from '../shared/counter.js';
 
 let volumeTickets = 0
 const bikeToggle = () => {
@@ -39,7 +39,7 @@ const bikeToggle = () => {
     const urgenceLinePrice = document.querySelector('.total-cargo');
     urgenceLinePrice.classList.remove('hidden');
     cargoDiv.innerHTML = 1
-    cargoDivPrice.innerHTML = `${1 * 7}.00€`
+    cargoDivPrice.innerHTML = `${(1 * price)/100}.00€`
     volumeTickets = 1
     const cargo = document.querySelectorAll('.form-check');
     cargo[1].firstChild.checked = true;

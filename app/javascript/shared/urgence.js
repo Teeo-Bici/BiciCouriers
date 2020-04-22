@@ -1,4 +1,4 @@
-import  { counter } from '../shared/counter.js';
+import  { counter, price } from '../shared/counter.js';
 
 let urgenceTickets = 0
 let urgenceRange = 11
@@ -8,7 +8,6 @@ const urgenceToggle = () => {
   const urgence2 = document.querySelector('.urgence-2');
   const urgence3 = document.querySelector('.urgence-3');
   const urgence4 = document.querySelector('.urgence-4');
-  const basePrice = 7
   if (urgence4 === null) {
     return
   }
@@ -42,7 +41,7 @@ const urgenceToggle = () => {
     const urgenceLinePrice = document.querySelector('.total-urgence');
     urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 1
-    urgenceDivPrice.innerHTML = `${basePrice * 1}.00 €`
+    urgenceDivPrice.innerHTML = `${(1 * price)/100}.00 €`
     urgenceTickets = 1
     urgenceRange = 4
     counter();
@@ -56,7 +55,7 @@ const urgenceToggle = () => {
     const urgenceLinePrice = document.querySelector('.total-urgence');
     urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 2
-    urgenceDivPrice.innerHTML = `${basePrice * 2}.00 €`
+    urgenceDivPrice.innerHTML = `${(2 * price)/100}.00 €`
     urgenceTickets = 2
     urgenceRange = 0.75
     counter();
@@ -75,7 +74,7 @@ const urgenceToggle = () => {
 
     urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 2
-    urgenceDivPrice.innerHTML = `${basePrice * 2}.00 €`
+    urgenceDivPrice.innerHTML = `${(2 * price)/100}.00 €`
     urgenceTickets = 2
     counter();
   });

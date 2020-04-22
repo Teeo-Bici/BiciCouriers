@@ -1,4 +1,4 @@
-import  { counter } from '../shared/counter.js';
+import  { counter, price } from '../shared/counter.js';
 
 let distanceTickets = 0
 const initMap = () => {
@@ -43,7 +43,7 @@ const initMap = () => {
           const distanceDiv = document.getElementById('distance-t');
           const distanceDivPrice = document.getElementById('distance-e');
           distanceDiv.innerHTML = distanceTickets
-          distanceDivPrice.innerHTML = `${distanceTickets * 7}.00 €`
+          distanceDivPrice.innerHTML = `${(distanceTickets * price)/100}.00 €`
           counter();
           const distanceFormInput = document.querySelector('.distance-input');
           distanceFormInput.value = distance;

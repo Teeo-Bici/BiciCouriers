@@ -2,8 +2,8 @@ class CarnetsController < ApplicationController
 
 
   def index
-    @inprogress = policy_scope(Carnet).where(remaining_tickets: [1..1000])
-    @oldone = policy_scope(Carnet).where(remaining_tickets: [-100..0])
+    @inprogress = policy_scope(Carnet).where('remaining_tickets > ?', 0).order(created_at: :desc)
+    @oldone = policy_scope(Carnet).where('remaining_tickets <= ?', 0)
   end
 
   def show
@@ -12,6 +12,7 @@ class CarnetsController < ApplicationController
   end
 
   def new
+    @carnet_templates = CarnetTemplate.all
     @carnet = Carnet.new
     authorize @carnet
   end

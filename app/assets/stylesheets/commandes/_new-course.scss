@@ -15,7 +15,7 @@
   transition: 0.4s;
   width: 45%;
   border-radius: 15px;
-  background: #153A7E;
+  background: $light-blue;
   box-shadow:  7px -7px 14px #143776,
                -7px 7px 14px #143776;
   padding: 20px 20px 20px 20px;
@@ -94,7 +94,7 @@
   flex-direction: column;
   margin-top: 20px;
   border-radius: 15px;
-  background: #153A7E;
+  background: $light-blue;
   box-shadow:  7px -7px 14px #143776,
                -7px 7px 14px #143776;
   padding: 15px;
@@ -141,7 +141,7 @@
   margin-top: 13px;
   border-radius: 15px;
   padding: 15px;
-  background: #153A7E;
+  background: $light-blue;
   box-shadow:  7px -7px 14px #143776,
                -7px 7px 14px #163d86;
   &:hover {
@@ -196,7 +196,7 @@
   transition: 0.4s;
   margin: 10px 0px 20px 0px;
   border-radius: 15px;
-  background: #153A7E;
+  background: $light-blue;
   box-shadow:  7px -7px 14px #143776,
                -7px 7px 14px #143776;
   padding: 15px;

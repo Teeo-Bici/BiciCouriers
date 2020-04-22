@@ -1,5 +1,4 @@
 import noUiSlider from 'nouislider';
-import 'nouislider/distribute/nouislider.css';
 import  { urgenceRange } from '../shared/urgence.js';
 
 const slider = () => {
