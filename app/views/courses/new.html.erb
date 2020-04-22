@@ -4,7 +4,7 @@
 <div class="first-container">
   <div class="rammassage">
     <%= f.fields_for :pickups do |pickup| %>
-        <%= pickup.text_field :address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
+        <%= pickup.text_field :address, value: current_user.address, label: false, :required => true, :placeholder => 'Adresse de rammassage', class: 'inline-form address-input' %>
         <%= pickup.date_field :date, value: Date.today, label: false, :required => true, :placeholder => 'Date', class: 'inline-form' %>
         <%= pickup.text_area :details, :as => :text, :placeholder => 'Des infos à nous communiquer sur le ramassage ?', class: 'inline-form' %>
         <div class="slider-container hidden-trans"><div id="slider-pickup"></div><span id="slider-pickup-value" class="hidden"></span></div>
@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <%= f.association :bike, as: :radio_buttons, checked: :first, wrapper_html: { style: "display: none" }, class: "hhidden" %>
+      <%= f.input :bike, as: :radio_buttons, wrapper_html: { style: "display: none" } %>
     </div>
 
     <div class="total-container">
