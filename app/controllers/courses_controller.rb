@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
     drop = @course.drops.build
+    @bikes = Bike.all
     pickup = @course.pickups.build
     authorize drop
     authorize pickup
@@ -30,20 +31,19 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
+    @course.bike_id = Bike.first.id if @course.bike_id == nil
+    @bikes = Bike.all
     @user = current_user
     @carnet = @user.carnets.last
     @course.user = @user
     @course.carnet = @user.carnets.last
     authorize @course
     if @course.save
-      # raise
       add_course_to_carnet(@carnet, @course, @user)
-      # raise
       @carnet.save
       @user.save
       redirect_to courses_path
     else
-    # raise
       render :new
     end
   end

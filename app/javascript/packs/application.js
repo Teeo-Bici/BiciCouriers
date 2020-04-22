@@ -1,6 +1,6 @@
 import "bootstrap";
-import noUiSlider from 'nouislider';
 import 'nouislider/distribute/nouislider.css';
+
 
 
 import  { movement } from '../shared/services.js';
