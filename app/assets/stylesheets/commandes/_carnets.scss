@@ -1,8 +1,25 @@
 .carnet-main-container {
   // background-color: red;
-  width: 80vw;
-  height: 3000px;
+  width: 50%;
+  // height: 3000px;
   margin-top: 100px;
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
+  .left {
+    text-align: left;
+  }
+  .ldBar-label {
+    font-size: 14px !important;
+    padding-bottom: 12%;
+  }
+  .ticket-counter {
+    width: 100% !important;
+    height: 100% !important;
+  }
   .carnet-in-progress {
     h1 {
       font-family: Montserrat;
@@ -14,26 +31,30 @@
       margin-left: 7.5%;
     }
   }
+  .index-column {
+      width: 90%;
+      height: 50px;
+      margin: 0px auto;
+      display: grid;
+      align-items: center;
+      grid-template-columns:20% 15% 15% 50%;
+      grid-template-rows: auto;
+      .title > p {
+        color: white;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
   .index-carnets {
-    width: 85%;
-    margin: 0px auto;
-    display: grid;
-    grid-template-columns: 10% 10% 10% 10% 60%;
-    grid-template-rows: auto;
-    .title > p {
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
-    }
-    .center {
-      text-align: center;
-    }
-    .right {
-      text-align: right;
-    }
-
+    background: $light-blue;
+    box-shadow:  5px -5px 10px #133574,
+                 -5px 5px 10px #173f88;
+    margin-bottom: 7px;
+    border-radius: 7.5px;
+    transition: 0.2s;
     p {
       font-family: Montserrat;
       font-style: normal;
@@ -42,8 +63,11 @@
       line-height: 15px;
       color: white;
     }
-    .bici-button {
-      padding: 7px 12px;
+    &:hover {
+      background: $blue;
+      transform: scale(1.01);
+      text-decoration: none;
+
     }
   }
 
@@ -58,10 +82,10 @@
   }
 
   .index-titles {
-    margin-top: 20px;
-    .index-title {
-      padding: 0px 10px;
+      // margin-top: 20px;
       border-bottom: 2px solid white;
+      padding: 0px 10px;
+    .index-title {
     }
   }
 }
