@@ -41,7 +41,7 @@ const urgenceToggle = () => {
     const urgenceLinePrice = document.querySelector('.total-urgence');
     urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 1
-    urgenceDivPrice.innerHTML = `${(1 * price)/100}.00 €`
+    urgenceDivPrice.innerHTML = `${(1 * price /100).toFixed(2)} €`
     urgenceTickets = 1
     urgenceRange = 4
     counter();
@@ -55,7 +55,7 @@ const urgenceToggle = () => {
     const urgenceLinePrice = document.querySelector('.total-urgence');
     urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 2
-    urgenceDivPrice.innerHTML = `${(2 * price)/100}.00 €`
+    urgenceDivPrice.innerHTML = `${(2 * price /100).toFixed(2)} €`
     urgenceTickets = 2
     urgenceRange = 0.75
     counter();
@@ -74,7 +74,7 @@ const urgenceToggle = () => {
 
     urgenceLinePrice.classList.remove('hidden');
     urgenceDiv.innerHTML = 2
-    urgenceDivPrice.innerHTML = `${(2 * price)/100}.00 €`
+    urgenceDivPrice.innerHTML = `${(2 * price /100).toFixed(2)} €`
     urgenceTickets = 2
     counter();
   });

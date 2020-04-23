@@ -39,7 +39,7 @@ const bikeToggle = () => {
     const urgenceLinePrice = document.querySelector('.total-cargo');
     urgenceLinePrice.classList.remove('hidden');
     cargoDiv.innerHTML = 1
-    cargoDivPrice.innerHTML = `${(1 * price)/100}.00€`
+    cargoDivPrice.innerHTML = `${(1 * price /100).toFixed(2)} €`
     volumeTickets = 1
     const cargo = document.querySelectorAll('.form-check');
     cargo[1].firstChild.checked = true;

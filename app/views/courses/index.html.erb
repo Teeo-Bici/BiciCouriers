@@ -1,16 +1,16 @@
 <div class="course-main-container">
   <div class="course-in-progress">
     <h1>Mes commandes</h1>
-    <div class="index-courses index-titles">
+    <div class="index-column index-titles">
       <div class="index-title title center">  <p>Date</p>                 </div>
       <div class="index-title title">         <p>Point de ramassage</p>   </div>
       <div class="index-title title center">  <p>Date</p>                 </div>
       <div class="index-title title">         <p>Point de livraison</p>   </div>
       <div class="index-title title center">  <p>Statut</p>               </div>
       <div class="index-title title center">  <p>Distance</p>             </div>
-      <div class="index-title title">         <p>Prix</p>                 </div>
-      <div class="index-title title center">  <p>Ticket(s)</p>            </div>
-      <div class="index-title title right"></div>
+      <div class="index-title title center">         <p>Prix</p>                 </div>
+      <div class="index-title title center">  <p>Tickets</p>            </div>
+      <!-- <div class="index-title title right"></div> -->
     </div>
     <%= render 'shared/index_courses', courses: @pending %>
     <%= render 'shared/index_courses', courses: @accepted %>
