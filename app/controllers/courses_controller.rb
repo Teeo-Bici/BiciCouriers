@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
     @user = current_user
     @carnet = @user.carnets.where('remaining_tickets > ?', 0).first
     @course.user = @user
-    @course.carnet = @user.carnets.last
+    @course.carnet = @carnet
     authorize @course
     if @course.save
       add_course_to_carnet(@carnet, @course, @user)
@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
 private
 
   def course_params
-        params.require(:course).permit(:ticket_nb, :tickets_volume, :tickets_urgence, :tickets_distance, :distance, :details, :status, :price, :urgence, :carnet_id, :bike_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
+        params.require(:course).permit(:ticket_nb, :tickets_volume, :tickets_urgence, :tickets_distance, :distance, :details, :status, :price, :urgence, :bike_id, drops_attributes:[:id, :date, :details, :address, :start_hour, :end_hour], pickups_attributes:[:id, :details, :date, :address, :start_hour, :end_hour])
   end
 
   def add_course_to_carnet(carnet, course, user)

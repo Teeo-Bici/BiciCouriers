@@ -1,9 +1,17 @@
 .course-main-container {
   // background-color: red;
-  width: 80vw;
+  width: 80%;
   // height: 3000px;
   margin-top: 100px;
-
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
+  .left {
+    text-align: left;
+  }
   .course-in-progress {
     h1 {
       font-family: Montserrat;
@@ -15,28 +23,36 @@
       margin-left: 7.5%;
     }
   }
-
-  .index-courses {
-    width: 85%;
+  .index-column {
+    width: 90%;
+    height: 50px;
     margin: 0px auto;
     display: grid;
-    grid-template-columns: 10% 23% 10% 20% 10% 7.5% 7.5% 3% 10%;
+    align-items: center;
+    grid-template-columns: 5% 25% 5% 25% 10% 10% 10% 10%;
     grid-template-rows: auto;
-    border-bottom: solid white 1px;
     .title > p {
+      color: white;
       font-family: Montserrat;
       font-style: normal;
       font-weight: 600;
       font-size: 14px;
       line-height: 17px;
     }
+  }
+  .index-courses {
+    background: $light-blue;
+    box-shadow:  5px -5px 10px #133574,
+                 -5px 5px 10px #173f88;
+    margin-bottom: 7px;
+    border-radius: 7.5px;
+    transition: 0.2s;
+    // border-bottom: solid white 1px;
+    &:hover {
+      background: $blue;
+      transform: scale(1.01);
+      text-decoration: none;
 
-    .center {
-      text-align: center;
-    }
-
-    .right {
-      text-align: right;
     }
 
     p {
@@ -46,10 +62,6 @@
       font-size: 12px;
       line-height: 15px;
       color: white;
-    }
-
-    .bici-button {
-      padding: 7px 12px;
     }
   }
 
@@ -66,7 +78,7 @@
   .index-titles {
     margin-top: 20px;
     .index-title {
-      padding: 0px 10px;
+      // padding: 0px 0px;
       border-bottom: 2px solid white;
     }
   }

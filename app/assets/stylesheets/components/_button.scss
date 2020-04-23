@@ -1,7 +1,13 @@
 .bici-button {
   padding: 7px 12px;
-  border: solid 2px $pink;
+  border: solid 1px $pink;
   background-color: white;
   border-radius: 5px;
   color: $pink !important;
+  text-decoration: none !important;
+  transition: 0.3s;
+  &:hover {
+  border: solid 1px white;
+  font-weight: 400 !important;
+  }
 }

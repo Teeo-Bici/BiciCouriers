@@ -1,5 +1,3 @@
-
-
 .first-container {
   display: flex;
   // background-color: red;
@@ -42,6 +40,7 @@
     box-shadow:  15px -15px 51px #113069,
                  -15px 15px 51px #113069;
     // transform: scale(1.02);
+    cursor: pointer;
   }
 }
 
@@ -104,6 +103,7 @@
     box-shadow:  15px -15px 51px #113069,
                  -15px 15px 51px #113069;
     // transform: scale(1.02);
+    cursor: pointer;
   }
   .options {
     display: flex;
@@ -150,6 +150,7 @@
     box-shadow:  15px -15px 51px #113069,
                  -15px 15px 51px #113069;
     // transform: scale(1.02);
+    cursor: pointer;
   }
   .options {
     display: flex;
@@ -166,7 +167,7 @@
       color: white;
     }
     .bike-1-image {
-      background-image: asset-url("commande/bike-white.svg");
+      background-image: asset-url("commande/white-letter.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -177,7 +178,7 @@
       }
     }
     .bike-2-image {
-      background-image: asset-url("commande/cargo-white.svg");
+      background-image: asset-url("commande/white-box.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -294,10 +295,10 @@
     background-image: asset-url("commande/time-pink.svg") !important;
   }
   .bike-1-image {
-    background-image: asset-url("commande/bike-pink.svg") !important;
+    background-image: asset-url("commande/pink-letter.svg") !important;
   }
   .bike-2-image {
-    background-image: asset-url("commande/cargo-pink.svg") !important;
+    background-image: asset-url("commande/pink-box.svg") !important;
   }
 }
 

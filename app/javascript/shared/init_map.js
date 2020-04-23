@@ -8,7 +8,7 @@ const initMap = () => {
   if (dropInput === null) {
     return
   }
-
+  counter();
 
   const directionsService = new google.maps.DirectionsService();
   const directionsDisplay = new google.maps.DirectionsRenderer();
@@ -43,7 +43,8 @@ const initMap = () => {
           const distanceDiv = document.getElementById('distance-t');
           const distanceDivPrice = document.getElementById('distance-e');
           distanceDiv.innerHTML = distanceTickets
-          distanceDivPrice.innerHTML = `${(distanceTickets * price)/100}.00 €`
+          console.log(distanceDivPrice);
+          distanceDivPrice.innerHTML = `${(distanceTickets * price /100).toFixed(2)} €`
           counter();
           const distanceFormInput = document.querySelector('.distance-input');
           distanceFormInput.value = distance;

@@ -1,26 +1,30 @@
 <% if courses != [] %>
-  <div class="index-courses index-contents">
+  <div class="index-contents">
   	<% courses.each do |course|  %>
-  		<div class="index-content center"> <p> <%= course.pickups.first.date %> </p> </div>
-  		<div class="index-content"> <p> <%= course.pickups.first.address %> </p> </div>
-  		<div class="index-content center"> <p> <%= course.drops.first.date %> </p> </div>
-  		<div class="index-content"> <p> <%= course.drops.first.address %> </p> </div>
-  		<div class="index-content center status-<%=course.status%>"><p>
-  			<% case course.status %>
-  			<% when 'pending' %>
-  				En attente
-  			<% when 'accepted' %>
-  				Acceptée
-  			<% when 'inprogress' %>
-  				En livraison
-  			<% when 'done' %>
-  				Livrée
-  			<% end %></p></div>
-  		<div class="index-content right"> <p> <%= course.distance.nil? ? 0 : course.distance/1000.to_f %>km</p> </div>
-  		<div class="index-content"> <p> <%= course.ticket_nb.nil? ? 0 : (course.ticket_nb > 0 ? course.carnet.carnet_template.price_cents * course.ticket_nb : 0) %></p> </div>
-  		<div class="index-content center"> <p> <%= course.ticket_nb %> </p> </div>
-  		<div class="index-content right"> <%= link_to "détails", course_path(course), class: "bici-button" %></div>
-  	<% end %>
+      <%= link_to course_path(course), class: "index-courses index-column" do  %>
+
+    		<div class="index-content center"> <p> <%= (course.pickups.first.date).strftime('%e/%V/%y') %> </p> </div>
+    		<div class="index-content"> <p> <%= course.pickups.first.address %> </p> </div>
+    		<div class="index-content center"> <p> <%= (course.drops.first.date).strftime('%e/%V/%y') %> </p> </div>
+    		<div class="index-content"> <p> <%= course.drops.first.address %> </p> </div>
+    		<div class="index-content center status-<%=course.status%>"><p>
+    			<% case course.status %>
+    			<% when 'pending' %>
+    				En attente
+    			<% when 'accepted' %>
+    				Acceptée
+    			<% when 'inprogress' %>
+    				En livraison
+    			<% when 'done' %>
+    				Livrée
+    			<% end %></p></div>
+    		<div class="index-content right"> <p> <%= course.distance.nil? ? 0 : course.distance/1000.to_f %>km</p> </div>
+    		<div class="index-content center"> <p> <%= course.ticket_nb.nil? ? 0 : (course.ticket_nb > 0 ? number_with_precision((course.carnet.carnet_template.price_cents/100.00) * course.ticket_nb, precision: 2)  : 0) %> ht</p> </div>
+    		<div class="index-content center"> <p> <%= course.ticket_nb %> </p> </div>
+    		<!-- <div class="index-content left"> <%= link_to "détails", course_path(course), class: "bici-button" %></div> -->
+
+  	 <% end %>
+    <% end %>
   </div>
 <% end %>
 

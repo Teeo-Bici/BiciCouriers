@@ -15,7 +15,7 @@ const counter = () => {
   const totalDiv = document.getElementById('total-t');
   const totalDivPrice = document.getElementById('total-e');
   totalDiv.innerHTML = sum
-  totalDivPrice.innerHTML = sum * price;
+  totalDivPrice.innerHTML = `${(sum * price / 100).toFixed(2)} €`;
   const ticketsFormInput = document.querySelector('.tickets-input');
   const ticketsUrgenceInput = document.querySelector('.tickets-urgence');
   const ticketsVolumeInput = document.querySelector('.tickets-volume');

@@ -29,7 +29,7 @@
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}"%>
   </head>
 
-  <body>
+  <body class="custom-cur">
     <%= render 'shared/navbar_commande' %>
     <div class="commande-body">
       <%= render 'shared/sidebar' %>
